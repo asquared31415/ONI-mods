@@ -3,6 +3,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsFilter", "src\ModsFilte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVisualizer", "src\TrafficVisualizer\TrafficVisualizer.csproj", "{AD6C4F54-0B87-4261-AABB-04C091A2EAD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemPermeableTiles", "src\ItemPermeableTiles\ItemPermeableTiles.csproj", "{EB1B6CFF-2BA0-4D5D-9F76-341D7364D0E3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareLib", "src\SquareLib\SquareLib.csproj", "{BEF442F0-DD7A-4261-914E-1DBD07AD4852}"
 EndProject
 Global
@@ -19,6 +21,10 @@ Global
 		{AD6C4F54-0B87-4261-AABB-04C091A2EAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD6C4F54-0B87-4261-AABB-04C091A2EAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD6C4F54-0B87-4261-AABB-04C091A2EAD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1B6CFF-2BA0-4D5D-9F76-341D7364D0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1B6CFF-2BA0-4D5D-9F76-341D7364D0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1B6CFF-2BA0-4D5D-9F76-341D7364D0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1B6CFF-2BA0-4D5D-9F76-341D7364D0E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E71A6982-BEB0-42F5-BE29-C9AF9BF67ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E71A6982-BEB0-42F5-BE29-C9AF9BF67ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E71A6982-BEB0-42F5-BE29-C9AF9BF67ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
