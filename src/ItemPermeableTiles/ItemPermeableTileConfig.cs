@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using SquareLib;
 using TUNING;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace ItemPermeableTiles
 	public class ItemPermeableTileConfig : IBuildingConfig
 	{
 		public const string ID = "asquared31415_ItemPermeableTileConfig";
-		private const string ANIM = "floor_basic_kanim";
+		private const string ANIM = "floor_permeable_kanim";
 
 		private static readonly int BlockTileConnectorId = Hash.SDBMLower("tiles_mesh_tops");
 
@@ -32,18 +33,14 @@ namespace ItemPermeableTiles
 			buildingDef.Floodable = false;
 			buildingDef.Overheatable = false;
 			buildingDef.Entombable = false;
-
-			// TODO: what does this do?
 			buildingDef.UseStructureTemperature = false;
-
 			buildingDef.AudioCategory = "Metal";
 			buildingDef.AudioSize = "small";
 			buildingDef.BaseTimeUntilRepair = -1f;
 			buildingDef.SceneLayer = Grid.SceneLayer.TileMain;
 			buildingDef.isKAnimTile = true;
-
-			// TODO: what?
 			buildingDef.ConstructionOffsetFilter = BuildingDef.ConstructionOffsetFilter_OneDown;
+			buildingDef.BlockTileIsTransparent = true;
 
 			// Solid is used for solid tiles (wow!)
 			buildingDef.isSolidTile = false;
@@ -51,12 +48,10 @@ namespace ItemPermeableTiles
 			buildingDef.BlockTileMaterial = Assets.GetMaterial("tiles_solid");
 
 			buildingDef.BlockTileAtlas =
-				SquareLib.ModAssets.GetCustomTileAtlas(Path.Combine("anim", "assets", "tiles_permeable"));
+				ModAssets.GetCustomTileAtlas(Path.Combine("anim", "assets", "tiles_permeable"));
 
-			buildingDef.BlockTilePlaceAtlas = Assets.GetTextureAtlas("tiles_mesh_place");
-
-			// No spec map for now
-			//buildingDef.BlockTileShineAtlas = Assets.GetTextureAtlas("tiles_mesh_spec");
+			buildingDef.BlockTilePlaceAtlas =
+				ModAssets.GetCustomTileAtlas(Path.Combine("anim", "assets", "tiles_permeable_place"));
 
 			buildingDef.DecorBlockTileInfo = Assets.GetBlockTileDecorInfo("tiles_mesh_tops_decor_info");
 			buildingDef.DecorPlaceBlockTileInfo = Assets.GetBlockTileDecorInfo("tiles_mesh_tops_decor_place_info");

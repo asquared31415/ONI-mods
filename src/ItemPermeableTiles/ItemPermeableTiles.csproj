@@ -39,7 +39,6 @@
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\lib\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\lib\Assembly-CSharp-firstpass.dll</HintPath>
@@ -50,7 +49,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\lib\UnityEngine.CoreModule.dll</HintPath>
@@ -79,8 +77,9 @@
         $(ILMergeConsolePath) /lib:$(SolutionDir)lib /out:$(TargetName)-merged.dll $(TargetName).dll SquareLib.dll CaiLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
 
         echo F | xcopy /Y /S /R /Q "$(TargetDir)$(TargetName)-merged.dll" "$(SolutionDir)\Mods\$(TargetName)\$(TargetName).dll"
+        xcopy /Y /R /I /Q /E "$(ProjectDir)\anim" "$(SolutionDir)\Mods\$(TargetName)\anim\"
 
-        xcopy /Y /R  /I /Q  /E "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
+        xcopy /Y /R /I /Q /E "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
       </PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
