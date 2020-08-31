@@ -15,6 +15,7 @@ namespace ItemPermeableTiles
 			Debug.LogWarning("BUILT IN DEBUG MODE!");
 		#endif
 			BuildingUtils.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Base, ItemPermeableTileConfig.ID);
+			BuildingUtils.AddBuildingToTechnology(GameStrings.Technology.Liquids.Sanitation, ItemPermeableTileConfig.ID);
 			LocString.CreateLocStringKeys(typeof(STRINGS), null);
 		}
 	}
