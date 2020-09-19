@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareLib", "src\SquareLib\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterAnimations", "src\BetterAnimations\BetterAnimations.csproj", "{FB3FED85-8025-4974-A880-9C6A842E390B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoOverlay", "src\InfoOverlay\InfoOverlay.csproj", "{8B35B0F6-B0DA-4E85-933A-32A3E62142A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,5 +37,9 @@ Global
 		{FB3FED85-8025-4974-A880-9C6A842E390B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB3FED85-8025-4974-A880-9C6A842E390B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB3FED85-8025-4974-A880-9C6A842E390B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B35B0F6-B0DA-4E85-933A-32A3E62142A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B35B0F6-B0DA-4E85-933A-32A3E62142A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B35B0F6-B0DA-4E85-933A-32A3E62142A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B35B0F6-B0DA-4E85-933A-32A3E62142A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
