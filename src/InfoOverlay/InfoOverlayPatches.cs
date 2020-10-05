@@ -5,12 +5,19 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using Harmony;
+using SquareLib;
 using UnityEngine;
 
 namespace InfoOverlay
 {
     public static class InfoOverlayPatches
     {
+        [HarmonyPatch(typeof(Db), "Initialize")]
+        public static class Db_Initialize_Patch
+        {
+            public static void Postfix() { ModAssets.AddSpriteFromFile("overlay_info"); }
+        }
+
         // Register in the overlay
         [HarmonyPatch(typeof(OverlayMenu), "InitializeToggles")]
         public static class OverlayMenu_InitializeToggles_Patch
@@ -32,7 +39,16 @@ namespace InfoOverlay
                 );
 
                 var obj = constructor.Invoke(
-                    new object[] { "Info Overlay", "overlay_oxygen", InfoOverlay.ID, "", Action.NumActions, "Displays various information about tiles", "Info Overlay" }
+                    new object[]
+                    {
+                        "Info Overlay",
+                        "overlay_info",
+                        InfoOverlay.ID,
+                        "",
+                        Action.NumActions,
+                        "Displays various information about tiles",
+                        "Info Overlay"
+                    }
                 );
 
                 ___overlayToggleInfos.Add((KIconToggleMenu.ToggleInfo) obj);
@@ -87,7 +103,8 @@ namespace InfoOverlay
                 }
             }
 
-            private static Color GetCellColor(SimDebugView instance, int cell) => cell == SelectedCell ? new Color(0f, 1f, 0.3f, 0.3f) : Color.clear;
+            private static Color GetCellColor(SimDebugView instance, int cell) =>
+                cell == SelectedCell ? new Color(0f, 1f, 0.3f, 0.3f) : Color.clear;
         }
 
         [HarmonyPatch(typeof(SelectToolHoverTextCard), "UpdateHoverElements")]

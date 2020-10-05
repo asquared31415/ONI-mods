@@ -2,6 +2,7 @@ bin/
 obj/
 /packages/
 *.DotSettings.user
+*.DotSettings
 .idea
 .vs
 lib/*
