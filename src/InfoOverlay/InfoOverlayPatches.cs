@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using Harmony;
 using SquareLib;
+using STRINGS;
 using UnityEngine;
 
 namespace InfoOverlay
@@ -82,7 +83,7 @@ namespace InfoOverlay
         [HarmonyPatch(typeof(SimDebugView), "OnPrefabInit")]
         public static class SimDebugView_OnPrefabInit_Patch
         {
-            public static int SelectedCell;
+            private static int selectedCell;
 
             public static void Postfix(Dictionary<HashedString, Func<SimDebugView, int, Color>> ___getColourFuncs)
             {
@@ -94,9 +95,9 @@ namespace InfoOverlay
             {
                 while(true)
                 {
-                    if(Camera.main is Camera c)
+                    if(SimDebugView.Instance.GetMode() == InfoOverlay.ID && Camera.main is Camera c)
                     {
-                        SelectedCell = Grid.PosToCell(c.ScreenToWorldPoint(KInputManager.GetMousePos()));
+                        selectedCell = Grid.PosToCell(c.ScreenToWorldPoint(KInputManager.GetMousePos()));
                     }
 
                     yield return new WaitForEndOfFrame();
@@ -104,7 +105,7 @@ namespace InfoOverlay
             }
 
             private static Color GetCellColor(SimDebugView instance, int cell) =>
-                cell == SelectedCell ? new Color(0f, 1f, 0.3f, 0.3f) : Color.clear;
+                cell == selectedCell ? new Color(0f, 1f, 0.3f, 0.3f) : Color.clear;
         }
 
         [HarmonyPatch(typeof(SelectToolHoverTextCard), "UpdateHoverElements")]
@@ -188,7 +189,7 @@ namespace InfoOverlay
                 drawer.DrawText($"Name: {element.name}", inst.Styles_BodyText.Standard);
                 drawer.NewLine();
                 var hardnessStr = GameUtil.GetHardnessString(element);
-                if(hardnessStr == STRINGS.ELEMENTS.HARDNESS.NA)
+                if(hardnessStr == ELEMENTS.HARDNESS.NA)
                 {
                     hardnessStr = "Not Solid";
                 }
@@ -216,6 +217,18 @@ namespace InfoOverlay
                         inst.Styles_BodyText.Standard
                     );
                 }
+
+                drawer.NewLine();
+                drawer.DrawText(
+                    $"Specific Heat Capacity: {GameUtil.GetFormattedSHC(element.specificHeatCapacity)}",
+                    inst.Styles_BodyText.Standard
+                );
+
+                drawer.NewLine();
+                drawer.DrawText(
+                    $"Thermal Conductivity: {GameUtil.GetThermalConductivityString(element)}",
+                    inst.Styles_BodyText.Standard
+                );
 
                 drawer.EndShadowBar();
             }

@@ -14,7 +14,9 @@
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <DebugSymbols>false</DebugSymbols>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>bin\Debug\</OutputPath>
         <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -22,13 +24,13 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <DebugType>none</DebugType>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>bin\Release\</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <DebugSymbols>false</DebugSymbols>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="0Harmony">
@@ -67,8 +69,8 @@
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <PropertyGroup>
         <PostBuildEvent>
-            $(ILMergeConsolePath) /out:$(TargetName).dll $(TargetName).dll SquareLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
-            xcopy /yqie "$(TargetDir)$(TargetName).dll" "$(SolutionDir)\Mods\$(TargetName)\"
+            $(ILMergeConsolePath) /out:$(TargetName)-merged.dll $(TargetName).dll SquareLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
+            xcopy /yqie "$(TargetDir)$(TargetName)-merged.dll" "$(SolutionDir)\Mods\$(TargetName)\"
             xcopy /yqie "$(ProjectDir)\assets" "$(SolutionDir)\Mods\$(TargetName)\assets\"
             xcopy /yqie "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
         </PostBuildEvent>
