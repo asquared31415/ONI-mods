@@ -25,7 +25,7 @@
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
+        <DebugType>none</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>bin\Release\</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
@@ -69,7 +69,7 @@
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <PropertyGroup>
         <PostBuildEvent>
-            $(ILMergeConsolePath) /out:$(TargetName)-merged.dll $(TargetName).dll SquareLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
+            $(ILMergeConsolePath) /ndebug /out:$(TargetName)-merged.dll $(TargetName).dll SquareLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
             xcopy /yqie "$(TargetDir)$(TargetName)-merged.dll" "$(SolutionDir)\Mods\$(TargetName)\"
             xcopy /yqie "$(ProjectDir)\assets" "$(SolutionDir)\Mods\$(TargetName)\assets\"
             xcopy /yqie "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
