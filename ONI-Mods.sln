@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoOverlay", "src\InfoOver
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniteStorage", "src\InfiniteStorage\InfiniteStorage.csproj", "{B66D2E00-0798-4780-8492-C5E27A09363E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meep", "src\Meep\Meep.csproj", "{02A99E6C-56B3-4BDA-B002-4DEDE5A86115}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,5 +49,9 @@ Global
 		{B66D2E00-0798-4780-8492-C5E27A09363E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B66D2E00-0798-4780-8492-C5E27A09363E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B66D2E00-0798-4780-8492-C5E27A09363E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02A99E6C-56B3-4BDA-B002-4DEDE5A86115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02A99E6C-56B3-4BDA-B002-4DEDE5A86115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02A99E6C-56B3-4BDA-B002-4DEDE5A86115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02A99E6C-56B3-4BDA-B002-4DEDE5A86115}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
