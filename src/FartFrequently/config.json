@@ -1,0 +1,6 @@
+{
+  "min": 10.0,
+  "max": 40.0,
+  "emitAmount": 0.1,
+  "element": "Methane"
+}

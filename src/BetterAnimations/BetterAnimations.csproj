@@ -11,6 +11,7 @@
         <AssemblyName>BetterAnimations</AssemblyName>
         <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,9 +61,7 @@
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <PropertyGroup>
         <PostBuildEvent>
-            echo F | xcopy /Y /S /R /Q "$(TargetDir)$(TargetName).dll" "$(SolutionDir)\Mods\$(TargetName)\$(TargetName).dll"
-
-            xcopy /Y /R /I /Q /E "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
+            xcopy /YRIQE "$(ProjectDir)$(OutDir)$(TargetName).dll" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
         </PostBuildEvent>
     </PropertyGroup>
 </Project>

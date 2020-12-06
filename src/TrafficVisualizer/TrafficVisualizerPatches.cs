@@ -8,8 +8,6 @@ namespace TrafficVisualizer
 {
     public static class TrafficVisualizerPatches
     {
-        public static void OnLoad() { Debug.Log($"[TrafficVisualizer]"); }
-
         [HarmonyPatch(typeof(Db), "Initialize")]
         public static class Db_Initialize_Patch
         {
