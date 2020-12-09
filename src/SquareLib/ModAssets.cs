@@ -20,7 +20,7 @@ namespace SquareLib
                 tex.LoadImage(data);
                 textureAtlas = ScriptableObject.CreateInstance<TextureAtlas>();
                 textureAtlas.texture = tex;
-                textureAtlas.vertexScale = TileAtlas.vertexScale;
+                textureAtlas.scaleFactor = TileAtlas.scaleFactor;
                 textureAtlas.items = TileAtlas.items;
             }
             catch
