@@ -5,4 +5,4 @@ obj/
 *.DotSettings
 .idea
 .vs
-lib/*
+lib*/*
