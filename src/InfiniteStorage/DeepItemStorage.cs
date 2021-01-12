@@ -39,7 +39,6 @@ namespace InfiniteStorage
             var storage = go.AddOrGet<Storage>();
             storage.capacityKg = float.PositiveInfinity;
             storage.allowItemRemoval = true;
-            storage.allowSublimation = false;
             storage.SetDefaultStoredItemModifiers(
                 new List<Storage.StoredItemModifier>
                 {

@@ -44,7 +44,6 @@ namespace InfiniteStorage
             storage.capacityKg = float.PositiveInfinity;
             storage.showDescriptor = true;
             storage.allowItemRemoval = false;
-            storage.allowSublimation = false;
             storage.storageFilters = STORAGEFILTERS.GASES;
             storage.showInUI = false;
             storage.SetDefaultStoredItemModifiers(

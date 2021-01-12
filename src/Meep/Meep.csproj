@@ -59,7 +59,7 @@
         <PostBuildEvent>
             xcopy /yqie "$(TargetDir)$(TargetName).dll" "$(SolutionDir)\Mods\$(TargetName)\"
             xcopy /yqie "$(ProjectDir)\anim" "$(SolutionDir)\Mods\$(TargetName)\anim\"
-            xcopy /yqie "$(ProjectDir)mod_info.yaml" "$(SolutionDir)\Mods\$(TargetName)\"
+            xcopy /YIQ "$(ProjectDir)mod_info.yaml" "$(SolutionDir)\Mods\$(TargetName)\"
             xcopy /yqie "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
         </PostBuildEvent>
     </PropertyGroup>

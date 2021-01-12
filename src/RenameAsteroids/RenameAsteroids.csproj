@@ -78,7 +78,7 @@
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <PropertyGroup>
         <PostBuildEvent>
-            xcopy /YIQ "$(ProjectDir)$(OutDir)$(TargetName).dll" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
+            xcopy /YIQ "$(TargetDir)$(TargetName).dll" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
             xcopy /YIQ "$(ProjectDir)mod_info.yaml" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
         </PostBuildEvent>
     </PropertyGroup>

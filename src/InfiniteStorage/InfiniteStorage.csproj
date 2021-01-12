@@ -46,6 +46,7 @@
         </Reference>
         <Reference Include="CaiLib">
             <HintPath>..\..\lib\CaiLib.dll</HintPath>
+            <Private>False</Private>
         </Reference>
         <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
           <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
@@ -82,11 +83,15 @@
     <ItemGroup>
       <None Include="packages.config" />
     </ItemGroup>
+    <ItemGroup>
+      <Content Include="mod_info.yaml" />
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <PropertyGroup>
         <PostBuildEvent>
-            $(ILMergeConsolePath) /ndebug /out:$(TargetName)-merged.dll $(TargetName).dll CaiLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319
+            $(ILMergeConsolePath) /ndebug /out:$(TargetName)-merged.dll $(TargetName).dll CaiLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319 /lib:$(SolutionDir)lib
             xcopy /yqie "$(TargetDir)$(TargetName)-merged.dll" "$(SolutionDir)\Mods\$(TargetName)\"
+            xcopy /YIQ "$(ProjectDir)mod_info.yaml" "$(SolutionDir)\Mods\$(TargetName)\"
             xcopy /yqie "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
         </PostBuildEvent>
     </PropertyGroup>
