@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Harmony;
+using ProcGenGame;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace RenameAsteroids
 {
@@ -21,20 +24,20 @@ namespace RenameAsteroids
     {
         public static void Postfix(WorldSelector __instance)
         {
-            foreach(var worldRow in __instance.worldRows)
+            foreach (var worldRow in __instance.worldRows)
             {
                 worldRow.Key.onDoubleClick = () => RenameAsteroids.OnDoubleClick(worldRow);
             }
         }
     }
 
-    [HarmonyPatch(typeof(DetailsScreen),"OnPrefabInit")]
+    [HarmonyPatch(typeof(DetailsScreen), "OnPrefabInit")]
     public static class DetailsScreen_OnPrefabInit_Patch
     {
         public static void Postfix(List<DetailsScreen.SideScreenRef> ___sideScreens)
         {
             var alarmSideScreen = ___sideScreens.FirstOrDefault(s => s.name == "Alarm SideScreen");
-            if(alarmSideScreen != null)
+            if (alarmSideScreen != null)
             {
                 var trav = Traverse.Create((AlarmSideScreen) alarmSideScreen.screenPrefab);
                 var prefab = trav.Field<KInputField>("nameInputField").Value;
@@ -52,30 +55,62 @@ namespace RenameAsteroids
         public static bool OnDoubleClick(KeyValuePair<MultiToggle, int> row)
         {
             var world = ClusterManager.Instance.GetWorld(row.Value);
-            var asteroid = world.GetComponent<AsteroidGridEntity>();
-            if(asteroid == null)
+            var gridEntity = world.GetComponent<ClusterGridEntity>();
+            if (gridEntity == null)
             {
                 return false;
             }
 
-            var hierarchy = row.Key.GetComponent<HierarchyReferences>();
-            var label = hierarchy.GetReference<LocText>("Label");
-            var input = Object.Instantiate(InputPrefab, label.transform);
-            input.field.text = asteroid.Name;
-            input.field.fontAsset = label.font;
-            input.field.ActivateInputField();
-            input.onEndEdit += () =>
+            switch (gridEntity)
             {
-                var trav = Traverse.Create(asteroid);
-                trav.Field("m_name").SetValue(input.field.text);
-                trav.Field<KSelectable>("m_selectable").Value.SetName(input.field.text);
-                label.enabled = true;
-                Game.Instance.Trigger((int) GameHashes.DiscoveredWorldsChanged);
-                Object.Destroy(input);
-            };
+                case AsteroidGridEntity _:
+                {
+                    var hierarchy = row.Key.GetComponent<HierarchyReferences>();
+                    var label = hierarchy.GetReference<LocText>("Label");
+                    var input = Object.Instantiate(InputPrefab, label.transform);
+                    input.field.text = gridEntity.Name;
+                    input.field.fontAsset = label.font;
+                    input.field.ActivateInputField();
+                    input.onEndEdit += () =>
+                                       {
+                                           var trav = Traverse.Create(gridEntity);
+                                           trav.Field("m_name").SetValue(input.field.text);
+                                           trav.Field<KSelectable>("m_selectable").Value.SetName(input.field.text);
+                                           label.enabled = true;
 
-            label.enabled = false;
-            return true;
+                                           Game.Instance.Trigger((int) GameHashes.DiscoveredWorldsChanged);
+                                           Object.Destroy(input);
+                                       };
+
+                    label.enabled = false;
+                    return true;
+                }
+                case Clustercraft c:
+                {
+                    var hierarchy = row.Key.GetComponent<HierarchyReferences>();
+                    var label = hierarchy.GetReference<LocText>("Label");
+                    var input = Object.Instantiate(InputPrefab, label.transform);
+                    input.field.text = gridEntity.Name;
+                    input.field.fontAsset = label.font;
+                    input.field.ActivateInputField();
+                    input.onEndEdit += () =>
+                                       {
+                                           c.SetRocketName(input.field.text);
+
+                                           var trav = Traverse.Create(gridEntity);
+                                           trav.Field<KSelectable>("m_selectable").Value.SetName(input.field.text);
+                                           label.enabled = true;
+
+                                           Game.Instance.Trigger((int) GameHashes.DiscoveredWorldsChanged);
+                                           Object.Destroy(input);
+                                       };
+
+                    label.enabled = false;
+                    return true;
+                }
+                default:
+                    return false;
+            }
         }
     }
 }
