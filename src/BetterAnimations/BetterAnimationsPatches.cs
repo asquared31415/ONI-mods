@@ -10,22 +10,8 @@ namespace BetterAnimations
 {
     public static class BetterAnimationsPatches
     {
-        // At level 20, should be 3.0
-        // Clamp to no less than 0.75
-        public static float AnimSpeed(MultitoolController.Instance instance)
-        {
-            var levels = instance.sm.worker.Get<AttributeLevels>(instance);
-            var athletics = levels.GetAttributeLevel("Athletics").level;
-            return Mathf.Clamp(athletics / 6.6667f, 0.75f, float.PositiveInfinity);
-        }
-
-        private static readonly MethodInfo AnimSpeedHelper = AccessTools.Method(
-            typeof(BetterAnimationsPatches),
-            nameof(AnimSpeed)
-        );
-
         [HarmonyPatch]
-        public static class MultitoolController_Patches
+        public static class MultitoolController_Patch
         {
             public static IEnumerable<MethodInfo> TargetMethods()
             {
@@ -33,21 +19,41 @@ namespace BetterAnimations
                 yield return AccessTools.Method(typeof(MultitoolController.Instance), "PlayPost");
             }
 
+            private static readonly MethodInfo PlayMethodInfo = AccessTools.Method(typeof(KAnimControllerBase), "Play",
+                new[]
+                {
+                    typeof(HashedString),
+                    typeof(KAnim.PlayMode),
+                    typeof(float), typeof(float)
+                });
+
+            private static readonly MethodInfo SpeedHelper =
+                AccessTools.Method(typeof(MultitoolController_Patch), nameof(GetScaleHelper));
+
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> orig)
             {
-                List<CodeInstruction> codes = orig.ToList();
-
-                var idx = codes.FindIndex(ci => ci.opcode == OpCodes.Ldc_R4 && ci.operand is 1.0f);
-                if(idx == -1)
+                var codes = orig.ToList();
+                var idx = codes.FindIndex(ci => ci.operand is MethodInfo m && m == PlayMethodInfo);
+                if (idx != -1)
                 {
-                    Debug.LogWarning("[Better Multitool Animations] Unable to find index to patch animation speed");
+                    // Insert after the load of the speed mult
+                    codes.Insert(idx - 1, new CodeInstruction(OpCodes.Call, SpeedHelper));
+                }
+                else
+                {
+                    Debug.LogError("Could not patch multitool animation speed");
                 }
 
-                codes.RemoveAt(idx);
-                codes.Insert(idx++, new CodeInstruction(OpCodes.Ldarg_0));
-                codes.Insert(idx, new CodeInstruction(OpCodes.Call, AnimSpeedHelper));
-
                 return codes;
+            }
+
+            // At level 20, should be 3.0
+            // Clamp to no less than 0.75
+            private static float GetScaleHelper(MultitoolController.Instance smi, float scale)
+            {
+                var levels = smi.sm.worker.Get<AttributeLevels>(smi);
+                var athletics = levels.GetAttributeLevel("Athletics").level;
+                return scale * Mathf.Clamp(athletics / 6.6667f, 0.75f, float.PositiveInfinity);
             }
         }
     }
