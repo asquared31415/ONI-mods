@@ -6,4 +6,4 @@ obj/
 .idea
 .vs
 lib*/*
-Mods/
+Mods/*
