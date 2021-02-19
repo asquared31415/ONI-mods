@@ -14,8 +14,8 @@ namespace RenameAsteroids
         public static void Postfix(WorldSelector __instance, object data)
         {
             var key = (int) data;
-            var addedWorld = __instance.worldRows.FirstOrDefault(e => e.Value == key);
-            addedWorld.Key.onDoubleClick = () => RenameAsteroids.OnDoubleClick(addedWorld);
+            var addedWorld = __instance.worldRows.FirstOrDefault(e => e.Key == key);
+            addedWorld.Value.onDoubleClick = () => RenameAsteroids.OnDoubleClick(addedWorld);
         }
     }
 
@@ -26,7 +26,7 @@ namespace RenameAsteroids
         {
             foreach (var worldRow in __instance.worldRows)
             {
-                worldRow.Key.onDoubleClick = () => RenameAsteroids.OnDoubleClick(worldRow);
+                worldRow.Value.onDoubleClick = () => RenameAsteroids.OnDoubleClick(worldRow);
             }
         }
     }
@@ -52,9 +52,9 @@ namespace RenameAsteroids
     {
         public static KInputField InputPrefab;
 
-        public static bool OnDoubleClick(KeyValuePair<MultiToggle, int> row)
+        public static bool OnDoubleClick(KeyValuePair<int, MultiToggle> row)
         {
-            var world = ClusterManager.Instance.GetWorld(row.Value);
+            var world = ClusterManager.Instance.GetWorld(row.Key);
             var gridEntity = world.GetComponent<ClusterGridEntity>();
             if (gridEntity == null)
             {
@@ -65,7 +65,7 @@ namespace RenameAsteroids
             {
                 case AsteroidGridEntity _:
                 {
-                    var hierarchy = row.Key.GetComponent<HierarchyReferences>();
+                    var hierarchy = row.Value.GetComponent<HierarchyReferences>();
                     var label = hierarchy.GetReference<LocText>("Label");
                     var input = Object.Instantiate(InputPrefab, label.transform);
                     input.field.text = gridEntity.Name;
@@ -87,7 +87,7 @@ namespace RenameAsteroids
                 }
                 case Clustercraft c:
                 {
-                    var hierarchy = row.Key.GetComponent<HierarchyReferences>();
+                    var hierarchy = row.Value.GetComponent<HierarchyReferences>();
                     var label = hierarchy.GetReference<LocText>("Label");
                     var input = Object.Instantiate(InputPrefab, label.transform);
                     input.field.text = gridEntity.Name;

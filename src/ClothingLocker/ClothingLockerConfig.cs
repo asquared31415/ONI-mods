@@ -14,8 +14,6 @@ namespace ClothingLocker
         public const string Desc = "Duplicants decided that putting clothes in with their debris was a bad idea.  " +
                                    "So they invented a storage bin specifically for storing clothing!";
 
-        public static Tag Tag = new Tag(Id);
-
         public override BuildingDef CreateBuildingDef()
         {
             var buildingDef = BuildingTemplates.CreateBuildingDef(
@@ -52,14 +50,17 @@ namespace ClothingLocker
             storage.showInUI = true;
             storage.allowItemRemoval = true;
             storage.showDescriptor = true;
-            storage.storageFilters = new List<Tag> { GameTags.Clothes };
+            storage.storageFilters = new List<Tag> {GameTags.Clothes};
             storage.storageFullMargin = STORAGE.STORAGE_LOCKER_FILLED_MARGIN;
             storage.fetchCategory = Storage.FetchCategory.GeneralStorage;
-            go.AddOrGet<CopyBuildingSettings>().copyGroupTag = Tag;
+            go.AddOrGet<CopyBuildingSettings>().copyGroupTag = Id;
             go.AddOrGet<StorageLocker>();
             go.AddOrGet<UserNameable>();
         }
 
-        public override void DoPostConfigureComplete(GameObject go) { go.AddOrGetDef<StorageController.Def>(); }
+        public override void DoPostConfigureComplete(GameObject go)
+        {
+            go.AddOrGetDef<StorageController.Def>();
+        }
     }
 }

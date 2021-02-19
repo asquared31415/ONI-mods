@@ -9,7 +9,7 @@ namespace ClothingLocker
         {
             CaiLib.Logger.Logger.LogInit();
 
-            BuildingUtils.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Base, ClothingLockerConfig.Id);
+            ModUtil.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Base, ClothingLockerConfig.Id);
 
             StringUtils.AddBuildingStrings(
                 ClothingLockerConfig.Id,

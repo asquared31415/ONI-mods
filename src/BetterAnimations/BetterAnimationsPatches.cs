@@ -36,8 +36,10 @@ namespace BetterAnimations
                 var idx = codes.FindIndex(ci => ci.operand is MethodInfo m && m == PlayMethodInfo);
                 if (idx != -1)
                 {
+                    --idx;
                     // Insert after the load of the speed mult
-                    codes.Insert(idx - 1, new CodeInstruction(OpCodes.Call, SpeedHelper));
+                    codes.Insert(idx++, new CodeInstruction(OpCodes.Ldarg_0));
+                    codes.Insert(idx, new CodeInstruction(OpCodes.Call, SpeedHelper));
                 }
                 else
                 {
@@ -49,7 +51,7 @@ namespace BetterAnimations
 
             // At level 20, should be 3.0
             // Clamp to no less than 0.75
-            private static float GetScaleHelper(MultitoolController.Instance smi, float scale)
+            private static float GetScaleHelper(float scale, MultitoolController.Instance smi)
             {
                 var levels = smi.sm.worker.Get<AttributeLevels>(smi);
                 var athletics = levels.GetAttributeLevel("Athletics").level;
