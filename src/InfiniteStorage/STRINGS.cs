@@ -1,4 +1,4 @@
-﻿namespace InfiniteStorage
+namespace InfiniteStorage
 {
     public static class STRINGS
     {

@@ -1,4 +1,4 @@
-﻿using STRINGS;
+using STRINGS;
 
 namespace ItemPermeableTiles
 {

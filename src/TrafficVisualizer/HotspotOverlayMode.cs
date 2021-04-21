@@ -1,4 +1,4 @@
-﻿namespace TrafficVisualizer
+namespace TrafficVisualizer
 {
     public class HotspotOverlayMode : OverlayModes.Mode
     {

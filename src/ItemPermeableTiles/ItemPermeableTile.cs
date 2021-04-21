@@ -1,4 +1,4 @@
-﻿namespace ItemPermeableTiles
+namespace ItemPermeableTiles
 {
     public class ItemPermeableTile : KMonoBehaviour
     {

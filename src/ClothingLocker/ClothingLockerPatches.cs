@@ -1,4 +1,4 @@
-﻿using CaiLib.Utils;
+using CaiLib.Utils;
 using TUNING;
 
 namespace ClothingLocker

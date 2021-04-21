@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using Harmony;
 using TMPro;
 using UnityEngine;

@@ -1,4 +1,4 @@
-﻿using CaiLib.Utils;
+using CaiLib.Utils;
 
 namespace MicroTransformer
 {

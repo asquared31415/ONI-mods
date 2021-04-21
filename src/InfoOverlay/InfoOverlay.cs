@@ -1,4 +1,4 @@
-﻿namespace InfoOverlay
+namespace InfoOverlay
 {
     public class InfoOverlay : OverlayModes.Mode
     {
