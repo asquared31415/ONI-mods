@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -24,7 +24,7 @@
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
+        <DebugType>none</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>bin\Release\</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
@@ -44,12 +44,12 @@
             <HintPath>..\..\lib\Assembly-CSharp-firstpass.dll</HintPath>
             <Private>False</Private>
         </Reference>
-        <Reference Include="System"/>
-        <Reference Include="System.Core"/>
-        <Reference Include="System.Xml.Linq"/>
-        <Reference Include="System.Data.DataSetExtensions"/>
-        <Reference Include="System.Data"/>
-        <Reference Include="System.Xml"/>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
         <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>..\..\lib\UnityEngine.dll</HintPath>
             <Private>False</Private>
@@ -68,17 +68,24 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="PriorityZeroPatches.cs"/>
-        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="PriorityZeroPatches.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="zeroPriority.png"/>
-        <EmbeddedResource Include="zeroTool.png"/>
+        <EmbeddedResource Include="zeroPriority.png" />
+        <EmbeddedResource Include="zeroTool.png" />
     </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <ItemGroup>
+      <Content Include="mod_info.yaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <PropertyGroup>
         <PostBuildEvent>
-            xcopy /YRIQE "$(ProjectDir)$(OutDir)$(TargetName).dll" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
+            mkdir -p "$HOME/.config/unity3d/Klei/Oxygen Not Included/mods/Dev/$(TargetName)/" &amp;&amp;
+            cp "$(TargetDir)$(TargetName).dll" "$HOME/.config/unity3d/Klei/Oxygen Not Included/mods/Dev/$(TargetName)/" &amp;&amp;
+            cp "$(TargetDir)mod_info.yaml" "$HOME/.config/unity3d/Klei/Oxygen Not Included/mods/Dev/$(TargetName)/"
         </PostBuildEvent>
     </PropertyGroup>
 </Project>
