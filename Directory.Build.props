@@ -9,13 +9,11 @@
 
 	<PropertyGroup>
 		<GameContentType Condition="'$(Configuration)' == 'Vanilla'">Vanilla</GameContentType>
-		<GameContentType Condition="'$(Configuration)' == 'SpacedOut'">SpacedOut</GameContentType>
 		<GameContentType Condition="'$(Configuration)' == 'Mergedown'">Mergedown</GameContentType>
 		<BuildType>Release</BuildType>
 		<LibFolder>../../lib/$(GameContentType)</LibFolder>
 		<OutputPath>bin/$(Configuration)/</OutputPath>
 		<DistributionFolder Condition="'$(Configuration)' == 'Vanilla'">/archived_versions/vanilla</DistributionFolder>
-		<DistributionFolder Condition="'$(Configuration)' == 'SpacedOut'">/archived_versions/spacedout</DistributionFolder>
 		<DistributionFolder Condition="'$(Configuration)' == 'Mergedown'"></DistributionFolder>
 	</PropertyGroup>
 
@@ -74,6 +72,8 @@
 		<Content Include="mod_info.yaml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
+	</ItemGroup>
+	<ItemGroup Condition="$(AssemblyName) != 'SquareLib' and $(GameContentType) == 'Mergedown'">
 		<Content Include="mod.yaml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>

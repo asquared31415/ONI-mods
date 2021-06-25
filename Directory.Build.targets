@@ -26,10 +26,12 @@
 	</ItemGroup>
 
 	<Target Name="CopyOutput" AfterTargets="ILRepack" Condition="$(AssemblyName) != 'SquareLib'">
-		<Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/"/>
-		<Copy SourceFiles="$(ProjectDir)mod_info.yaml" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/"/>
-		<Copy SourceFiles="$(ProjectDir)mod.yaml" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/"/>
-		<Copy SourceFiles="@(_Anim)" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/anim/%(RecursiveDir)"/>
-		<Copy SourceFiles="@(CopyFolder)" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/%(CopyFolder.DestName)/%(RecursiveDir)"/>
+		<Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)$(DistributionFolder)"/>
+		<Copy SourceFiles="$(ProjectDir)mod_info.yaml" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)$(DistributionFolder)"/>
+		<Copy SourceFiles="@(_Anim)" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)$(DistributionFolder)/anim/%(RecursiveDir)"/>
+		<Copy SourceFiles="@(CopyFolder)" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)$(DistributionFolder)/%(CopyFolder.DestName)/%(RecursiveDir)"/>
+	</Target>
+	<Target Name="CopyNew" AfterTargets="CopyOutput" Condition="$(AssemblyName) != 'SquareLib' and $(GameContentType) == 'Mergedown'">
+		<Copy SourceFiles="$(ProjectDir)mod.yaml" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)$(DistributionFolder)"/>
 	</Target>
 </Project>
