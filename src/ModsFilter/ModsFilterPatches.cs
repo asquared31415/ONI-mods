@@ -1,15 +1,11 @@
 using System.Globalization;
-using HarmonyLib;
+using Harmony;
 using KMod;
 using TMPro;
 using UnityEngine;
 
 namespace ModsFilter
 {
-	public class ModsFilterInfo : UserMod2
-	{
-	}
-
 	public static class ModsFilterPatches
 	{
 		private static FilterManager _filterManager;

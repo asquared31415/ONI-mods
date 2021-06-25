@@ -1,16 +1,11 @@
 using System;
 using System.Collections.Generic;
-using HarmonyLib;
-using KMod;
+using Harmony;
 using SquareLib;
 using UnityEngine;
 
 namespace TrafficVisualizer
 {
-	public class TrafficVisualizerInfo : UserMod2
-	{
-	}
-
 	[HarmonyPatch(typeof(Db), "Initialize")]
 	public static class Db_Initialize_Patch
 	{

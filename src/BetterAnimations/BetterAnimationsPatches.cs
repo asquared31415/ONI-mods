@@ -2,17 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using HarmonyLib;
+using Harmony;
 using Klei.AI;
-using KMod;
 using UnityEngine;
 
 namespace BetterAnimations
 {
-	public class BetterAnimationsInfo : UserMod2
-	{
-	}
-
 	public static class BetterAnimationsPatches
 	{
 		[HarmonyPatch]

@@ -1,12 +1,11 @@
 using CaiLib.Utils;
-using HarmonyLib;
-using KMod;
+using Harmony;
 
 namespace MicroTransformer
 {
-	public class SmallTransformerInfo : UserMod2
+	public class SmallTransformerInfo
 	{
-		public override void OnLoad(Harmony harmony)
+		public static void OnLoad()
 		{
 			BuildingUtils.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Power, SmallTransformerConfig.Id);
 
@@ -16,7 +15,6 @@ namespace MicroTransformer
 				SmallTransformerConfig.Description,
 				SmallTransformerConfig.Effect
 			);
-			base.OnLoad(harmony);
 		}
 	}
 

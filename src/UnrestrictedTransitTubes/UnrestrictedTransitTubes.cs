@@ -1,12 +1,7 @@
-using HarmonyLib;
-using KMod;
+using Harmony;
 
 namespace UnrestrictedTransitTubes
 {
-	public class UnrestrictedTransitTubesInfo : UserMod2
-	{
-	}
-
 	[HarmonyPatch(typeof(UtilityNetworkTubesManager), "CanAddConnection")]
 	public class UtilityNetworkTubesManager_CanAddConnection_Patch
 	{

@@ -3,19 +3,17 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using CaiLib.Utils;
-using HarmonyLib;
-using KMod;
+using Harmony;
 
 namespace ItemPermeableTiles
 {
-	public class ItemPermeableTilesInfo : UserMod2
+	public class ItemPermeableTilesInfo
 	{
-		public override void OnLoad(Harmony harmony)
+		public static void OnLoad()
 		{
 			BuildingUtils.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Base, ItemPermeableTileConfig.ID);
 
 			LocString.CreateLocStringKeys(typeof(STRINGS), null);
-			base.OnLoad(harmony);
 		}
 	}
 

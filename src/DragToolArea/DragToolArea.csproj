@@ -6,9 +6,4 @@
         <AssemblyName>DragToolArea</AssemblyName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Vanilla'" />
-    <ItemGroup>
-        <Content Include="mod_info.yaml">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
 </Project>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <Configurations>Vanilla;SpacedOut;Mergedown</Configurations>
+        <Configurations>Vanilla;Mergedown</Configurations>
         <RootNamespace>ClothingLocker</RootNamespace>
         <AssemblyName>ClothingLocker</AssemblyName>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Vanilla'" />
-    <PropertyGroup Condition="'$(Configuration)' == 'SpacedOut'" />
     <PropertyGroup Condition="'$(Configuration)' == 'Mergedown'" />
     <PropertyGroup>
         <UseCaiLib>true</UseCaiLib>    

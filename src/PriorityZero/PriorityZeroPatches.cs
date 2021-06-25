@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using HarmonyLib;
-using KMod;
+using Harmony;
 using SquareLib;
 using STRINGS;
 using UnityEngine;
 
 namespace PriorityZero
 {
-	public class PriorityZeroInfo : UserMod2
-	{
-	}
-
 	public class PriorityZero
 	{
 		private const string ZeroPriority = "PriorityZero.zeroPriority.png";

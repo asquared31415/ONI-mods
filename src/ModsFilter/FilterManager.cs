@@ -1,5 +1,5 @@
 using System;
-using HarmonyLib;
+using Harmony;
 using TMPro;
 
 namespace ModsFilter

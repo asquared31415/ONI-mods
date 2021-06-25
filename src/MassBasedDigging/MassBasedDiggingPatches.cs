@@ -1,13 +1,8 @@
-using HarmonyLib;
-using KMod;
+using Harmony;
 using UnityEngine;
 
 namespace MassBasedDigging
 {
-	public class MassBasedDiggingInfo : UserMod2
-	{
-	}
-
 	[HarmonyPatch(typeof(Workable), nameof(Workable.GetEfficiencyMultiplier))]
 	public static class Workable_GetEfficiencyMultiplier_Patch
 	{

@@ -1,14 +1,9 @@
 using System;
 using Database;
-using HarmonyLib;
-using KMod;
+using Harmony;
 
 namespace Meep
 {
-	public class MeepInfo : UserMod2
-	{
-	}
-
 	[HarmonyPatch(typeof(Personalities), MethodType.Constructor, new Type[0])]
 	public class Meep
 	{

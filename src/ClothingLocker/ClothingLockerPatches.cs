@@ -1,13 +1,11 @@
 using CaiLib.Utils;
-using HarmonyLib;
-using KMod;
 using TUNING;
 
 namespace ClothingLocker
 {
-	public class ClothingLockerInfo : UserMod2
+	public class ClothingLockerInfo
 	{
-		public override void OnLoad(Harmony harmony)
+		public static void OnLoad()
 		{
 			ModUtil.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Furniture, ClothingLockerConfig.Id);
 
@@ -19,7 +17,6 @@ namespace ClothingLocker
 			);
 
 			STORAGEFILTERS.NOT_EDIBLE_SOLIDS.Remove(GameTags.Clothes);
-			base.OnLoad(harmony);
 		}
 	}
 }

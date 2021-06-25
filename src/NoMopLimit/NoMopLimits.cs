@@ -2,17 +2,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using HarmonyLib;
-using KMod;
+using Harmony;
 
 namespace NoMopLimit
 {
-	public class NoMopLimitInfo : UserMod2
+	public class NoMopLimitInfo
 	{
-		public override void OnLoad(Harmony harmony)
+		public static void OnLoad()
 		{
 			MopTool.maxMopAmt = float.PositiveInfinity;
-			base.OnLoad(harmony);
 		}
 	}
 

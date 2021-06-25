@@ -1,12 +1,7 @@
-using HarmonyLib;
-using KMod;
+using Harmony;
 
 namespace AnyStartingDupe
 {
-	public class AnyStartingDupeInfo : UserMod2
-	{
-	}
-
 	[HarmonyPatch(typeof(MinionStartingStats), MethodType.Constructor, typeof(bool), typeof(string))]
 	public class AnyStartingDupe
 	{
