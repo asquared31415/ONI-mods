@@ -1,89 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="..\..\packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('..\..\packages\ILMerge.3.0.41\build\ILMerge.props')" />
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{8B35B0F6-B0DA-4E85-933A-32A3E62142A3}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <Configurations>Vanilla;SpacedOut;Mergedown</Configurations>
         <RootNamespace>InfoOverlay</RootNamespace>
         <AssemblyName>InfoOverlay</AssemblyName>
-        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <LangVersion>latest</LangVersion>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>none</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Vanilla'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'SpacedOut'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'Mergedown'" />
     <ItemGroup>
-        <Reference Include="0Harmony">
-            <HintPath>..\..\lib\0Harmony.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>..\..\lib\Assembly-CSharp.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp-firstpass">
-            <HintPath>..\..\lib\Assembly-CSharp-firstpass.dll</HintPath>
-        </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Xml.Linq" />
-        <Reference Include="System.Data.DataSetExtensions" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine.CoreModule">
-            <HintPath>..\..\lib\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
+        <Content Include="mod_info.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="InfoOverlay.cs" />
-        <Compile Include="InfoOverlayPatches.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
+      <ProjectReference Include="..\SquareLib\SquareLib.csproj" />
     </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\SquareLib\SquareLib.csproj">
-        <Project>{bef442f0-dd7a-4261-914e-1dbd07ad4852}</Project>
-        <Name>SquareLib</Name>
-      </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="mod_info.yaml" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <PropertyGroup>
-        <PostBuildEvent>
-            $(ILMergeConsolePath) /ndebug /out:$(TargetName)-merged.dll $(TargetName).dll SquareLib.dll /targetplatform:v4,C:/Windows/Microsoft.NET/Framework64/v4.0.30319 /lib:$(SolutionDir)lib
-            xcopy /yqie "$(TargetDir)$(TargetName)-merged.dll" "$(SolutionDir)\Mods\$(TargetName)\"
-            xcopy /yqie "$(ProjectDir)\assets" "$(SolutionDir)\Mods\$(TargetName)\assets\"
-            xcopy /YIQ "$(ProjectDir)mod_info.yaml" "$(SolutionDir)\Mods\$(TargetName)\"
-            xcopy /yqie "$(SolutionDir)\Mods\$(TargetName)\*" "%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\dev\$(TargetName)_dev\"
-        </PostBuildEvent>
-    </PropertyGroup>
-    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-      <PropertyGroup>
-        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
-      </PropertyGroup>
-      <Error Condition="!Exists('..\..\packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\ILMerge.3.0.41\build\ILMerge.props'))" />
-    </Target>
 </Project>

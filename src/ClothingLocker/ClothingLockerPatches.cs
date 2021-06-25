@@ -1,24 +1,25 @@
 using CaiLib.Utils;
+using HarmonyLib;
+using KMod;
 using TUNING;
 
 namespace ClothingLocker
 {
-    public class ClothingLockerPatches
-    {
-        public static void OnLoad()
-        {
-            CaiLib.Logger.Logger.LogInit();
+	public class ClothingLockerInfo : UserMod2
+	{
+		public override void OnLoad(Harmony harmony)
+		{
+			ModUtil.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Furniture, ClothingLockerConfig.Id);
 
-            ModUtil.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Base, ClothingLockerConfig.Id);
+			StringUtils.AddBuildingStrings(
+				ClothingLockerConfig.Id,
+				ClothingLockerConfig.Name,
+				ClothingLockerConfig.Desc,
+				ClothingLockerConfig.Effect
+			);
 
-            StringUtils.AddBuildingStrings(
-                ClothingLockerConfig.Id,
-                ClothingLockerConfig.Name,
-                ClothingLockerConfig.Desc,
-                ClothingLockerConfig.Effect
-            );
-
-            STORAGEFILTERS.NOT_EDIBLE_SOLIDS.Remove(GameTags.Clothes);
-        }
-    }
+			STORAGEFILTERS.NOT_EDIBLE_SOLIDS.Remove(GameTags.Clothes);
+			base.OnLoad(harmony);
+		}
+	}
 }

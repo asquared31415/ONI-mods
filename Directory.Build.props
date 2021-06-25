@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Condition=" Exists('Directory.Build.props.user') " Project="Directory.Build.props.user"/>
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<OutputType>Library</OutputType>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GameContentType Condition="'$(Configuration)' == 'Vanilla'">Vanilla</GameContentType>
+		<GameContentType Condition="'$(Configuration)' == 'SpacedOut'">SpacedOut</GameContentType>
+		<GameContentType Condition="'$(Configuration)' == 'Mergedown'">Mergedown</GameContentType>
+		<BuildType>Release</BuildType>
+		<LibFolder>../../lib/$(GameContentType)</LibFolder>
+		<OutputPath>bin/$(Configuration)/</OutputPath>
+		<DistributionFolder Condition="'$(Configuration)' == 'Vanilla'">/archived_versions/vanilla</DistributionFolder>
+		<DistributionFolder Condition="'$(Configuration)' == 'SpacedOut'">/archived_versions/spacedout</DistributionFolder>
+		<DistributionFolder Condition="'$(Configuration)' == 'Mergedown'"></DistributionFolder>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ILRepack.MSBuild.Task" Version="2.0.13" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(BuildType)' == 'Release'">
+		<DefineConstants>TRACE</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="System"/>
+		<Reference Include="System.Core"/>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(LibFolder)/Newtonsoft.Json.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>$(LibFolder)/0Harmony.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(LibFolder)/Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>$(LibFolder)/Assembly-CSharp-firstpass.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>$(LibFolder)/UnityEngine.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(LibFolder)/UnityEngine.CoreModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(LibFolder)/UnityEngine.UI.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>$(LibFolder)/Unity.TextMeshPro.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.ImageConversionModule">
+			<HintPath>$(LibFolder)/UnityEngine.ImageConversionModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(AssemblyName) != 'SquareLib'">
+		<Content Include="mod_info.yaml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="mod.yaml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(UseCaiLib) == 'true'">
+		<Reference Include="CaiLib">
+			<HintPath>$(LibFolder)/CaiLib.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(UseSquareLib) == 'true'">
+		<ProjectReference Include="..\SquareLib\SquareLib.csproj" />
+	</ItemGroup>
+</Project>

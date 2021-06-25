@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<PropertyGroup Condition="$(UseCaiLib) == 'true' or $(UseSquareLib) == 'true'">
+		<RepackAll>true</RepackAll>
+	</PropertyGroup>
+
+	<Target Name="ILRepack" AfterTargets="Build" Condition=" '$(RepackAll)' == 'true'">
+		<ItemGroup>
+			<InputAssemblies Include="$(TargetDir)/*.dll" Exclude="**/0Harmony.dll; **/System.*; **/Microsoft.*" />
+		</ItemGroup>
+
+		<ILRepack
+			TargetPlatformVersion="v4"
+			OutputType="SameAsPrimaryAssembly"
+			MainAssembly="$(TargetPath)"
+			OutputAssembly="$(TargetPath)"
+			InputAssemblies="@(InputAssemblies)"
+			WilcardInputAssemblies="true"
+			WorkingDirectory="$(LibFolder)"
+		/>
+	</Target>
+
+
+	<ItemGroup>
+		<_Anim Include="$(ProjectDir)anim/**"/>
+	</ItemGroup>
+
+	<Target Name="CopyOutput" AfterTargets="ILRepack" Condition="$(AssemblyName) != 'SquareLib'">
+		<Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/"/>
+		<Copy SourceFiles="$(ProjectDir)mod_info.yaml" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/"/>
+		<Copy SourceFiles="$(ProjectDir)mod.yaml" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/"/>
+		<Copy SourceFiles="@(_Anim)" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/anim/%(RecursiveDir)"/>
+		<Copy SourceFiles="@(CopyFolder)" DestinationFolder="$(GameSavePath)/mods/Dev/$(ProjectName)/%(CopyFolder.DestName)/%(RecursiveDir)"/>
+	</Target>
+</Project>

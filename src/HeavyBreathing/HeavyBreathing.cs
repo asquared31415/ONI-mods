@@ -4,47 +4,49 @@ using Harmony;
 
 namespace HeavyBreathing
 {
-    class HeavyBreathing
-    {
-        public static void OnLoad()
-        {
-            Watcher.Path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+	internal class HeavyBreathing
+	{
+		public static readonly ConfigReader Conf = new ConfigReader();
+		private static readonly FileSystemWatcher Watcher = new FileSystemWatcher();
 
-            Watcher.NotifyFilter = NotifyFilters.LastWrite;
+		public static void OnLoad()
+		{
+			Watcher.Path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            // Add event handlers.
-            Watcher.Changed += OnChanged;
+			Watcher.NotifyFilter = NotifyFilters.LastWrite;
 
-            // Begin watching.
-            Watcher.EnableRaisingEvents = true;
-            CO2Manager_SpawnBreath_Patch.SetValues();
-        }
+			// Add event handlers.
+			Watcher.Changed += OnChanged;
 
-        public static readonly ConfigReader Conf = new ConfigReader();
-        private static readonly FileSystemWatcher Watcher = new FileSystemWatcher();
+			// Begin watching.
+			Watcher.EnableRaisingEvents = true;
+			CO2Manager_SpawnBreath_Patch.SetValues();
+		}
 
-        private static void OnChanged(object source, FileSystemEventArgs a)
-        {
-            CO2Manager_SpawnBreath_Patch.SetValues();
-        }
-    }
+		private static void OnChanged(object source, FileSystemEventArgs a)
+		{
+			CO2Manager_SpawnBreath_Patch.SetValues();
+		}
+	}
 
-    [HarmonyPatch(typeof(CO2Manager), "SpawnBreath")]
-    public class CO2Manager_SpawnBreath_Patch
-    {
-        private static float emitAmount = 0.02f;
+	[HarmonyPatch(typeof(CO2Manager), "SpawnBreath")]
+	public class CO2Manager_SpawnBreath_Patch
+	{
+		private static float emitAmount = 0.02f;
 
-        public static void Prefix(ref float mass) { mass = emitAmount; }
+		public static void Prefix(ref float mass)
+		{
+			mass = emitAmount;
+		}
 
-        public static void SetValues()
-        {
-            HeavyBreathing.Conf.SetFromConfig();
-            emitAmount = HeavyBreathing.Conf.EmitAmount;
-            Debug.Log(
-                "[Heavy Breathing]: (Config Loader) The emit amount has been changed to " +
-                HeavyBreathing.Conf.EmitAmount +
-                "Kg"
-            );
-        }
-    }
+		public static void SetValues()
+		{
+			HeavyBreathing.Conf.SetFromConfig();
+			emitAmount = HeavyBreathing.Conf.EmitAmount;
+			Debug.Log(
+				"[Heavy Breathing]: (Config Loader) The emit amount has been changed to " +
+				HeavyBreathing.Conf.EmitAmount + "Kg"
+			);
+		}
+	}
 }

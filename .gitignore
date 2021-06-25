@@ -7,3 +7,4 @@ obj/
 .vs
 lib*/*
 Mods/*
+Directory.Build.props.user

@@ -3,69 +3,76 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using CaiLib.Utils;
-using Harmony;
+using HarmonyLib;
+using KMod;
 
 namespace ItemPermeableTiles
 {
-    public static class ItemPermeableTilesOnLoad
-    {
-        public static void OnLoad()
-        {
-        #if DEBUG
-            Debug.LogWarning("BUILT IN DEBUG MODE!");
-        #endif
-            BuildingUtils.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Base, ItemPermeableTileConfig.ID);
-            BuildingUtils.AddBuildingToTechnology(
-                GameStrings.Technology.Liquids.Sanitation,
-                ItemPermeableTileConfig.ID
-            );
+	public class ItemPermeableTilesInfo : UserMod2
+	{
+		public override void OnLoad(Harmony harmony)
+		{
+			BuildingUtils.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Base, ItemPermeableTileConfig.ID);
 
-            LocString.CreateLocStringKeys(typeof(STRINGS), null);
-        }
-    }
+			LocString.CreateLocStringKeys(typeof(STRINGS), null);
+			base.OnLoad(harmony);
+		}
+	}
 
-    [HarmonyPatch]
-    public static class GravityPatches
-    {
-        private static readonly MethodInfo IsSolidHack = AccessTools.Method(typeof(GravityPatches), nameof(IsSolid));
+	[HarmonyPatch(typeof(Db), nameof(Db.Initialize))]
+	public static class TechAdd
+	{
+		public static void Postfix()
+		{
+			BuildingUtils.AddBuildingToTechnology(
+				GameStrings.Technology.Liquids.Sanitation,
+				ItemPermeableTileConfig.ID
+			);
+		}
+	}
 
-        private static readonly MethodInfo SolidIndexer = AccessTools.Method(
-            typeof(Grid.BuildFlagsSolidIndexer),
-            "get_Item"
-        );
+	[HarmonyPatch]
+	public static class GravityPatches
+	{
+		private static readonly MethodInfo IsSolidHack = AccessTools.Method(typeof(GravityPatches), nameof(IsSolid));
 
-        public static IEnumerable<MethodInfo> TargetMethods()
-        {
-            yield return AccessTools.Method(typeof(GravityComponents), "FixedUpdate");
-            yield return AccessTools.Method(typeof(FallerComponents), "OnSolidChanged");
-        }
+		private static readonly MethodInfo SolidIndexer = AccessTools.Method(
+			typeof(Grid.BuildFlagsSolidIndexer),
+			"get_Item"
+		);
 
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> orig)
-        {
-            List<CodeInstruction> codes = orig.ToList();
-            for(var i = 0; i < codes.Count; ++i)
-            {
-                if(codes[i].operand is MethodInfo m && m == SolidIndexer)
-                {
-                    codes[i] = new CodeInstruction(OpCodes.Call, IsSolidHack);
-                    codes.Insert(i - 1, new CodeInstruction(OpCodes.Pop));
-                    ++i;
-                }
-            }
+		public static IEnumerable<MethodInfo> TargetMethods()
+		{
+			yield return AccessTools.Method(typeof(GravityComponents), "FixedUpdate");
+			yield return AccessTools.Method(typeof(FallerComponents), "OnSolidChanged");
+		}
 
-            return codes;
-        }
+		public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> orig)
+		{
+			var codes = orig.ToList();
+			for (var i = 0; i < codes.Count; ++i)
+			{
+				if (codes[i].operand is MethodInfo m && m == SolidIndexer)
+				{
+					codes[i] = new CodeInstruction(OpCodes.Call, IsSolidHack);
+					codes.Insert(i - 1, new CodeInstruction(OpCodes.Pop));
+					++i;
+				}
+			}
 
-        public static bool IsSolid(int cell)
-        {
-            // If solid and is not permeable, true, if permeable, false
-            if(Grid.Solid[cell])
-            {
-                var go = Grid.Objects[cell, (int) ObjectLayer.Building];
-                return go == null || go.GetComponent<ItemPermeableTile>() == null;
-            }
+			return codes;
+		}
 
-            return false;
-        }
-    }
+		public static bool IsSolid(int cell)
+		{
+			// If solid and is not permeable, true, if permeable, false
+			if (Grid.Solid[cell])
+			{
+				var go = Grid.Objects[cell, (int) ObjectLayer.Building];
+				return go == null || go.GetComponent<ItemPermeableTile>() == null;
+			}
+
+			return false;
+		}
+	}
 }
