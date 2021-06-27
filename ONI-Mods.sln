@@ -45,7 +45,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenameAsteroids", "src\Rena
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-        Mergedown|Any CPU = Mergedown|Any CPU
+								Mergedown|Any CPU = Mergedown|Any CPU
 		Vanilla|Any CPU = Vanilla|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution

@@ -7,6 +7,23 @@ namespace AnyStartingDupe
 	{
 	}
 
+	// This is some testing code to get all the dupe names that are normally excluded
+	// The constants here come from the code patched below in the random range calls
+	/*
+	[HarmonyPatch(typeof(Db), "Initialize")]
+	public static class GetOtherDupes
+	{
+		public static void Postfix()
+		{
+			var db = Db.Get().Personalities;
+			for (var i = 0; i < 35; i++)
+			{
+				Debug.Log($"Dupe name: {db[i].nameStringKey}");
+			}
+		}
+	}
+	*/
+
 	[HarmonyPatch(typeof(MinionStartingStats), MethodType.Constructor, typeof(bool), typeof(string))]
 	public class AnyStartingDupe
 	{
