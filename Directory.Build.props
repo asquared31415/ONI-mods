@@ -58,6 +58,10 @@
 			<HintPath>$(LibFolder)/UnityEngine.UI.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+			<HintPath>$(LibFolder)/UnityEngine.UIModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
 		<Reference Include="Unity.TextMeshPro">
 			<HintPath>$(LibFolder)/Unity.TextMeshPro.dll</HintPath>
 			<Private>false</Private>
