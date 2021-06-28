@@ -34,4 +34,11 @@
 	<Target Name="CopyNew" AfterTargets="CopyOutput" Condition="$(AssemblyName) != 'SquareLib' and $(GameContentType) == 'Mergedown'">
 		<Copy SourceFiles="$(ProjectDir)mod.yaml" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)$(DistributionFolder)"/>
 	</Target>
+
+	<ItemGroup>
+		<_FinalMod Include="$(SolutionDir)/Mods/$(ProjectName)/**"/>
+	</ItemGroup>
+	<Target Name="CopyToGame" AfterTargets="CopyNew">
+		<Copy SourceFiles="@(_FinalMod)" DestinationFolder="$(GameSaveFolder)/mods/Dev/$(ProjectName)/%(RecursiveDir)"/>
+	</Target>
 </Project>
