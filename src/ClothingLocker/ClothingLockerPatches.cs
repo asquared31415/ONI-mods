@@ -18,7 +18,6 @@ namespace ClothingLocker
 				ClothingLockerConfig.Effect
 			);
 
-			STORAGEFILTERS.NOT_EDIBLE_SOLIDS.Remove(GameTags.Clothes);
 			base.OnLoad(harmony);
 		}
 	}
