@@ -86,6 +86,7 @@ Global
 		{6F8F8B54-8F19-4AD8-A4ED-CEFA9234B5ED}.Vanilla|Any CPU.ActiveCfg = Vanilla|Any CPU
 		{6F8F8B54-8F19-4AD8-A4ED-CEFA9234B5ED}.Vanilla|Any CPU.Build.0 = Vanilla|Any CPU
 		{6F8F8B54-8F19-4AD8-A4ED-CEFA9234B5ED}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU
+		{6F8F8B54-8F19-4AD8-A4ED-CEFA9234B5ED}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
 		{305D3958-F5C0-47CA-A27F-ABDAD65BA007}.Vanilla|Any CPU.ActiveCfg = Vanilla|Any CPU
 		{305D3958-F5C0-47CA-A27F-ABDAD65BA007}.Vanilla|Any CPU.Build.0 = Vanilla|Any CPU
 		{305D3958-F5C0-47CA-A27F-ABDAD65BA007}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU

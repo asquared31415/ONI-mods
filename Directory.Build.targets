@@ -10,7 +10,6 @@
 		</ItemGroup>
 
 		<ILRepack
-			TargetPlatformVersion="v4"
 			OutputType="SameAsPrimaryAssembly"
 			MainAssembly="$(TargetPath)"
 			OutputAssembly="$(TargetPath)"
