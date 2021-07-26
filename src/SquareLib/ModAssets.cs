@@ -25,7 +25,7 @@ namespace SquareLib
 			}
 			catch
 			{
-				Debug.LogError($"[Item Permeable Tiles]: Could not load atlas image at path {path}");
+				Debug.LogError($"Could not load atlas image at path {path}");
 			}
 
 			return textureAtlas;
