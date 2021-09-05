@@ -23,10 +23,11 @@ namespace TrafficVisualizer
 	[HarmonyPatch(typeof(TransitionDriver), "EndTransition")]
 	public static class TransitionDriver_EndTransition_Patch
 	{
-		public static void Prefix(Navigator ___navigator, Vector3 ___targetPos)
+		public static void Prefix(Navigator ___navigator, Vector3 ___targetPos, Navigator.ActiveTransition ___transition)
 		{
-			if (___navigator != null && ___navigator.gameObject.HasTag(GameTags.Minion))
+			if ((___navigator != null) && ___navigator.gameObject.HasTag(GameTags.Minion))
 			{
+				Debug.Log(___transition);
 				NavigatorRecordManager.Add(Grid.PosToCell(___targetPos));
 			}
 		}
@@ -70,6 +71,7 @@ namespace TrafficVisualizer
 					typeof(string),
 				}
 			);
+			var _ = Action.NumActions.ToString();
 
 			var obj = constructor.Invoke(
 				new object[]
@@ -78,7 +80,7 @@ namespace TrafficVisualizer
 					"traffic_overlay_icon",
 					HotspotOverlayMode.Id,
 					"",
-					Action.Overlay15,
+					Action.NumActions,
 					"Displays areas where duplicants travel frequently {Hotkey}",
 					"Traffic Overlay",
 				}

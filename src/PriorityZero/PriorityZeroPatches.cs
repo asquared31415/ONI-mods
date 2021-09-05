@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Xml.Serialization;
 using HarmonyLib;
 using KMod;
 using SquareLib;
@@ -22,6 +23,12 @@ namespace PriorityZero
 		private const string PriorityRendererAtlas = "PriorityZero.priority_overlay_atlas_zero.png";
 		public const PriorityScreen.PriorityClass PriorityZeroClass = (PriorityScreen.PriorityClass) (-2);
 		public const int PriorityZeroValue = -200;
+		public static readonly Chore.Precondition ZeroPrecondition = new Chore.Precondition
+		{
+			id = nameof(ZeroPrecondition),
+			description = "Priority Zero",
+			fn = (ref Chore.Precondition.Context context, object o) => context.chore.masterPriority.priority_class != PriorityZeroClass,
+		};
 
 		public static readonly Sprite ZeroPrioritySprite = ModAssets.AddSpriteFromManifest(ZeroPriority);
 		public static readonly Texture2D ZeroToolTexture = ModAssets.LoadTextureFromManifest(ZeroTool);
@@ -47,22 +54,40 @@ namespace PriorityZero
 		typeof(bool),
 		typeof(ReportManager.ReportType)
 	)]
-	public class Chore_Ctor_Patch
+	public static class Chore_Ctor_Patch
 	{
 		public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> origCode)
 		{
 			var codes = origCode.ToList();
-			foreach (var c in codes)
+			var idx = codes.FindIndex(ci => ci.opcode == OpCodes.Blt_S);
+			if (idx != -1)
 			{
-				if (c.opcode == OpCodes.Blt)
-				{
-					c.operand = 0;
-					return codes;
-				}
+				// Remove the first < 1 branch
+				// Move the label to the block after
+				codes[idx + 1].labels.AddRange(codes[idx - 2].labels);
+				codes.RemoveRange(idx - 2, 3);
+			}
+			else
+			{
+				Debug.LogError("[Priority Zero] unable to patch Chore ctor");
 			}
 
-			Debug.LogWarning("[PriorityZero] Unable to find Chore patch offset.");
+			var strIdx = codes.FindIndex(ci => ci.opcode == OpCodes.Ldstr);
+			if (strIdx != -1)
+			{
+				codes[strIdx].labels.Clear();
+			}
+			else
+			{
+				Debug.LogError("[Priority Zero] unable to patch Chore ctor");
+			}
+
 			return codes;
+		}
+
+		public static void Postfix(Chore __instance)
+		{
+			__instance.AddPrecondition(PriorityZero.ZeroPrecondition);
 		}
 	}
 
@@ -100,6 +125,7 @@ namespace PriorityZero
 		}
 	}
 
+	// Add zero cursor to priority cursors list
 	[HarmonyPatch(typeof(PrioritizeTool), "OnPrefabInit")]
 	public static class PrioritizeTool_OnPrefabInit_Patch
 	{
@@ -111,6 +137,7 @@ namespace PriorityZero
 		}
 	}
 
+	// Handle cursor when priority is selected
 	[HarmonyPatch(typeof(PrioritizeTool), nameof(PrioritizeTool.Update))]
 	public static class PrioritizeTool_Update_Patch
 	{
@@ -174,17 +201,17 @@ namespace PriorityZero
 			buttonsField.SetValue(buttons);
 		}
 	}
-
+	
+	// Make the buttons on the bar match up
 	[HarmonyPatch(typeof(PriorityScreen), nameof(PriorityScreen.SetScreenPriority))]
 	public static class PriorityScreen_SetScreenPriority_Patches
 	{
-		// TODO: Clean up
 		public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> origCode)
 		{
 			var codes = origCode.ToList();
 			var buttonsBasic = AccessTools.Field(typeof(PriorityScreen), "buttons_basic");
 			var setPriority = AccessTools.Property(typeof(PriorityButton), nameof(PriorityButton.priority))
-			                             .GetSetMethod();
+				.GetSetMethod();
 
 			var setSimpleTooltip = AccessTools.Method(typeof(ToolTip), nameof(ToolTip.SetSimpleTooltip));
 			var labels = codes[28].labels;
