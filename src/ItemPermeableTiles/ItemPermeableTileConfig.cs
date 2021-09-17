@@ -42,9 +42,6 @@ namespace ItemPermeableTiles
 			buildingDef.ConstructionOffsetFilter = BuildingDef.ConstructionOffsetFilter_OneDown;
 			buildingDef.BlockTileIsTransparent = true;
 
-			// Solid is used for solid tiles (wow!)
-			buildingDef.isSolidTile = false;
-
 			buildingDef.BlockTileMaterial = Assets.GetMaterial("tiles_solid");
 
 			buildingDef.BlockTileAtlas
