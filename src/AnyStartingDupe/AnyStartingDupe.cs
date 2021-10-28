@@ -24,7 +24,7 @@ namespace AnyStartingDupe
 	}
 	*/
 
-	[HarmonyPatch(typeof(MinionStartingStats), MethodType.Constructor, typeof(bool), typeof(string))]
+	[HarmonyPatch(typeof(MinionStartingStats), MethodType.Constructor, typeof(bool), typeof(string), typeof(string))]
 	public class AnyStartingDupe
 	{
 		public static void Prefix(ref bool is_starter_minion)
