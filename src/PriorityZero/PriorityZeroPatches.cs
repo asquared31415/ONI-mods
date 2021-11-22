@@ -23,11 +23,13 @@ namespace PriorityZero
 		private const string PriorityRendererAtlas = "PriorityZero.priority_overlay_atlas_zero.png";
 		public const PriorityScreen.PriorityClass PriorityZeroClass = (PriorityScreen.PriorityClass) (-2);
 		public const int PriorityZeroValue = -200;
+
 		public static readonly Chore.Precondition ZeroPrecondition = new Chore.Precondition
 		{
 			id = nameof(ZeroPrecondition),
 			description = "Priority Zero",
-			fn = (ref Chore.Precondition.Context context, object o) => context.chore.masterPriority.priority_class != PriorityZeroClass,
+			fn = (ref Chore.Precondition.Context context, object o) =>
+				context.chore.masterPriority.priority_class != PriorityZeroClass,
 		};
 
 		public static readonly Sprite ZeroPrioritySprite = ModAssets.AddSpriteFromManifest(ZeroPriority);
