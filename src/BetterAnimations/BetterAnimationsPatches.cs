@@ -63,20 +63,21 @@ namespace BetterAnimations
 			// Clamp to no less than 0.75
 			private static float GetScaleHelper(float scale, MultitoolController.Instance smi)
 			{
-				var levels = smi.sm.worker.Get<AttributeLevels>(smi);
-				if (levels == null)
+				// manual implementation for tryget
+				var go = smi.sm.worker.Get(smi);
+				if (go != null)
 				{
-					// failsafe to 1.0x if the worker doesn't have any attributes (impossible in Klei code, used for compatibility)
-					return 1f;
+					var levels = go.GetComponent<AttributeLevels>();
+
+					if (levels != null)
+					{
+						var athletics = levels.GetAttributeLevel("Athletics");
+						return scale * Mathf.Clamp(athletics.level / 6.6667f, 0.75f, float.PositiveInfinity);
+					}
 				}
 
-				var athletics = levels.GetAttributeLevel("Athletics");
-				if (athletics == null)
-				{
-					// failsafe to 1.0x if the worker doesn't have `Athletics` specifically (impossible in Klei code, used for compatibility)
-					return 1f;
-				}
-				return scale * Mathf.Clamp(athletics.level / 6.6667f, 0.75f, float.PositiveInfinity);
+				// failsafe to 1.0x if the worker doesn't have any attributes or Athletics (possible on rover)
+				return 1f;
 			}
 		}
 	}
