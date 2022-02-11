@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenameAsteroids", "src\Rena
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeScroll", "src\EdgeScroll\EdgeScroll.csproj", "{80B39EF1-D0E8-43C3-BF0A-E4355FD74FE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporalTearOpener", "src\TemporalTearOpener\TemporalTearOpener.csproj", "{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 								Mergedown|Any CPU = Mergedown|Any CPU
@@ -138,5 +140,9 @@ Global
 		{80B39EF1-D0E8-43C3-BF0A-E4355FD74FE5}.Vanilla|Any CPU.Build.0 = Debug|Any CPU
 		{80B39EF1-D0E8-43C3-BF0A-E4355FD74FE5}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU
 		{80B39EF1-D0E8-43C3-BF0A-E4355FD74FE5}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
+		{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}.Vanilla|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}.Vanilla|Any CPU.Build.0 = Debug|Any CPU
+		{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU
+		{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
 	EndGlobalSection
 EndGlobal
