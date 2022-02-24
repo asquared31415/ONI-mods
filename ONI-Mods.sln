@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeScroll", "src\EdgeScrol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporalTearOpener", "src\TemporalTearOpener\TemporalTearOpener.csproj", "{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFollowCam", "src\AutoFollowCam\AutoFollowCam.csproj", "{7BFB3FC7-6A27-41A7-A06A-451BCDD313CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 								Mergedown|Any CPU = Mergedown|Any CPU
@@ -144,5 +146,9 @@ Global
 		{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}.Vanilla|Any CPU.Build.0 = Debug|Any CPU
 		{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU
 		{49D4A6ED-EC69-49B3-A902-7645DCFDE14D}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
+		{7BFB3FC7-6A27-41A7-A06A-451BCDD313CD}.Vanilla|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFB3FC7-6A27-41A7-A06A-451BCDD313CD}.Vanilla|Any CPU.Build.0 = Debug|Any CPU
+		{7BFB3FC7-6A27-41A7-A06A-451BCDD313CD}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU
+		{7BFB3FC7-6A27-41A7-A06A-451BCDD313CD}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
 	EndGlobalSection
 EndGlobal
