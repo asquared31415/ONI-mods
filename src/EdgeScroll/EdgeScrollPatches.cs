@@ -110,6 +110,11 @@ namespace EdgeScroll
 			ref bool ___panDown
 		)
 		{
+			if (!Application.isFocused)
+			{
+				return;
+			}
+
 			var flags = EnabledMouseDirections.None;
 			var borderSize = EdgeScrollConfig.Instance.Data.BorderSize;
 
