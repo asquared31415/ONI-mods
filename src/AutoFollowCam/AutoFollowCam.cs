@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using HarmonyLib;
+﻿using HarmonyLib;
 using KMod;
+using UnityEngine;
 
 namespace AutoFollowCam
 {
@@ -8,63 +8,67 @@ namespace AutoFollowCam
 	{
 	}
 
-	public class AutoCamTimer : KMonoBehaviour, ISim1000ms
+	public class AutoCamTimer : KMonoBehaviour
 	{
+		internal enum TrackState
+		{
+			NotTracking,
+			Panning,
+			ManualTracking,
+			AutoTracking,
+		}
+
 		private const float CamFollowTime = 30f;
 
 		private float timeRemaining;
-		private bool isTracking;
-		public bool panning;
+		internal TrackState State;
 
 		protected override void OnSpawn()
 		{
 			base.OnSpawn();
-			timeRemaining = CamFollowTime;
-			isTracking = false;
-			panning = false;
+			ResetTracking();
 		}
 
-		public void ResetTimer()
+		public void ResetTracking()
 		{
 			timeRemaining = CamFollowTime;
-			isTracking = false;
+			State = TrackState.NotTracking;
 			CameraController.Instance.ClearFollowTarget();
 		}
 
-		public void Sim1000ms(float dt)
+		private void Update()
 		{
-			if (isTracking || panning)
+			// If the user is manually tracking something or the user is
+			// panning the camera currently, don't move the timer
+			if (State is TrackState.ManualTracking or TrackState.Panning)
 			{
 				return;
 			}
 
 			if (timeRemaining > 0)
 			{
-				timeRemaining -= dt;
+				timeRemaining -= Time.unscaledDeltaTime;
 			}
 
 			if (timeRemaining <= 0)
 			{
-				StartTracking();
+				SwapTrackTarget();
 			}
 		}
 
-		private void StartTracking()
+		private void SwapTrackTarget()
 		{
-			isTracking = true;
 			// ReSharper disable once SimplifyLinqExpressionUseAll
-			if (!Components.LiveMinionIdentities.Items.Any(
-					e => e.GetMyWorldId() == ClusterManager.Instance.activeWorldId
-				))
+			if (Components.LiveMinionIdentities.Items.Count <= 0)
 			{
 				return;
 			}
 
-			var targetDupe = Components.LiveMinionIdentities.Items
-				.Where(e => e.GetMyWorldId() == ClusterManager.Instance.activeWorldId)
-				.ToList()
-				.GetRandom();
+			var targetDupe = Components.LiveMinionIdentities.Items.GetRandom();
 			CameraController.Instance.SetFollowTarget(targetDupe.transform);
+
+			State = TrackState.AutoTracking;
+			timeRemaining = CamFollowTime;
 		}
 	}
 
@@ -85,19 +89,36 @@ namespace AutoFollowCam
 			var autocam = CameraController.Instance.GetComponent<AutoCamTimer>();
 			if (___panning || ___panLeft || ___panRight || ___panUp || ___panDown)
 			{
-				autocam.panning = true;
-				autocam.ResetTimer();
+				autocam.State = AutoCamTimer.TrackState.Panning;
 			}
 			else
 			{
-				// if it was panning, reset the timer
-				if (autocam.panning)
+				// If the camera was previously panning, start the timer
+				if (autocam.State is AutoCamTimer.TrackState.Panning)
 				{
-					autocam.ResetTimer();
+					autocam.ResetTracking();
 				}
-
-				autocam.panning = false;
 			}
+		}
+	}
+
+	[HarmonyPatch(typeof(CameraController), "SetFollowTarget")]
+	public static class CameraController_SetFollowTarget_Patch
+	{
+		public static void Postfix()
+		{
+			var autocam = CameraController.Instance.GetComponent<AutoCamTimer>();
+			autocam.State = AutoCamTimer.TrackState.ManualTracking;
+		}
+	}
+
+	[HarmonyPatch(typeof(CameraController), "ClearFollowTarget")]
+	public static class CameraController_ClearFollowTarget_Patch
+	{
+		public static void Postfix()
+		{
+			var autocam = CameraController.Instance.GetComponent<AutoCamTimer>();
+			autocam.State = AutoCamTimer.TrackState.NotTracking;
 		}
 	}
 }
