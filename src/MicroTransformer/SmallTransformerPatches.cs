@@ -1,4 +1,3 @@
-using CaiLib.Utils;
 using HarmonyLib;
 using KMod;
 
@@ -8,14 +7,8 @@ namespace MicroTransformer
 	{
 		public override void OnLoad(Harmony harmony)
 		{
-			BuildingUtils.AddBuildingToPlanScreen(GameStrings.PlanMenuCategory.Power, SmallTransformerConfig.Id);
-
-			StringUtils.AddBuildingStrings(
-				SmallTransformerConfig.Id,
-				SmallTransformerConfig.DisplayName,
-				SmallTransformerConfig.Description,
-				SmallTransformerConfig.Effect
-			);
+			ModUtil.AddBuildingToPlanScreen("Power", SmallTransformerConfig.Id);
+			LocString.CreateLocStringKeys(typeof(MicroTransformerStrings.STRINGS), null);
 			base.OnLoad(harmony);
 		}
 	}
@@ -25,10 +18,7 @@ namespace MicroTransformer
 	{
 		public static void Postfix()
 		{
-			BuildingUtils.AddBuildingToTechnology(
-				GameStrings.Technology.Power.AdvancedPowerRegulation,
-				SmallTransformerConfig.Id
-			);
+			Db.Get().Techs.Get("AdvancedPowerRegulation").unlockedItemIDs.Add(SmallTransformerConfig.Id);
 		}
 	}
 }

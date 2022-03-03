@@ -8,7 +8,4 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Vanilla'" />
     <PropertyGroup Condition="'$(Configuration)' == 'Mergedown'" />
-    <PropertyGroup>
-        <UseCaiLib>true</UseCaiLib>
-    </PropertyGroup>
 </Project>

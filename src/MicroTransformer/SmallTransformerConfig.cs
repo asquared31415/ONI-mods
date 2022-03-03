@@ -1,4 +1,3 @@
-using STRINGS;
 using TUNING;
 using UnityEngine;
 using BUILDINGS = TUNING.BUILDINGS;
@@ -8,13 +7,7 @@ namespace MicroTransformer
 	public class SmallTransformerConfig : IBuildingConfig
 	{
 		public const string Id = "asquared31415.MicroTransformer";
-		public const string DisplayName = "Micro Transformer";
 
-		public static readonly string Description
-			= $"Connect {UI.FormatAsLink("Batteries", "BATTERY")} on the large side to act as a valve and prevent {UI.FormatAsLink("Wires", "WIRE")} from drawing more than 750 W and suffering overload damage.";
-
-		public static readonly string Effect
-			= $"Limits {UI.FormatAsLink("Power", "POWER")} flowing through the Transformer to 750 W.";
 
 		public override BuildingDef CreateBuildingDef()
 		{
