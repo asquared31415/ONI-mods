@@ -45,7 +45,7 @@ namespace AutoFollowCam
 				return;
 			}
 
-			if (timeRemaining > 0)
+			if ((timeRemaining > 0) && (Time.timeScale != 0))
 			{
 				timeRemaining -= Time.unscaledDeltaTime;
 			}
