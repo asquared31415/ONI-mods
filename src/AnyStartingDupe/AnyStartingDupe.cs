@@ -1,35 +1,65 @@
+using System;
 using HarmonyLib;
+using JetBrains.Annotations;
 using KMod;
 
-namespace AnyStartingDupe
+namespace AnyStartingDupe;
+
+[UsedImplicitly]
+public class AnyStartingDupeInfo : UserMod2
 {
-	public class AnyStartingDupeInfo : UserMod2
-	{
-	}
+}
 
-	// This is some testing code to get all the dupe names that are normally excluded
-	// The constants here come from the code patched below in the random range calls
-	/*
-	[HarmonyPatch(typeof(Db), "Initialize")]
-	public static class GetOtherDupes
+// Debug code to list the personalities from the Db
+// IMPORTANT: If the patch below is enabled, then all of the personalities are starting personalities, so this doesn't help much
+/*
+[HarmonyPatch(typeof(Db), nameof(Db.Initialize))]
+public static class DebugDbInit
+{
+	[UsedImplicitly]
+	public static void Postfix(Db __instance)
 	{
-		public static void Postfix()
+		var personalities = __instance.Personalities;
+		Debug.Log("Valid starting personalities:");
+		foreach (var startingPersonality in personalities.GetStartingPersonalities())
 		{
-			var db = Db.Get().Personalities;
-			for (var i = 0; i < 35; i++)
-			{
-				Debug.Log($"Dupe name: {db[i].nameStringKey}");
-			}
+			Console.WriteLine($"\t{startingPersonality.nameStringKey}");
+		}
+
+		Debug.Log("All personalities:");
+		foreach (var personalitiesResource in personalities.resources)
+		{
+			Console.WriteLine($"\t{personalitiesResource.nameStringKey}");
 		}
 	}
-	*/
+}
+*/
 
-	[HarmonyPatch(typeof(MinionStartingStats), MethodType.Constructor, typeof(bool), typeof(string), typeof(string))]
-	public class AnyStartingDupe
+[HarmonyPatch(
+	typeof(Personality),
+	MethodType.Constructor,
+	typeof(string),
+	typeof(string),
+	typeof(string),
+	typeof(string),
+	typeof(string),
+	typeof(string),
+	typeof(string),
+	typeof(string),
+	typeof(int),
+	typeof(int),
+	typeof(int),
+	typeof(int),
+	typeof(int),
+	typeof(int),
+	typeof(string),
+	typeof(bool)
+)]
+public class Personality_Ctor_Patch
+{
+	[UsedImplicitly]
+	public static void Prefix(ref bool isStartingMinion)
 	{
-		public static void Prefix(ref bool is_starter_minion)
-		{
-			is_starter_minion = false;
-		}
+		isStartingMinion = true;
 	}
 }
