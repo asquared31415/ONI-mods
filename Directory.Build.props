@@ -8,13 +8,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<GameContentType Condition="'$(Configuration)' == 'Vanilla'">Vanilla</GameContentType>
-		<GameContentType Condition="'$(Configuration)' == 'Mergedown'">Mergedown</GameContentType>
 		<BuildType>Release</BuildType>
-		<LibFolder>../../lib/$(GameContentType)</LibFolder>
-		<OutputPath>bin/$(Configuration)/</OutputPath>
-		<DistributionFolder Condition="'$(Configuration)' == 'Vanilla'">/archived_versions/vanilla</DistributionFolder>
-		<DistributionFolder Condition="'$(Configuration)' == 'Mergedown'"></DistributionFolder>
+		<LibFolder>../../lib/</LibFolder>
+		<OutputPath>bin/</OutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -77,7 +73,7 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
-	<ItemGroup Condition="$(AssemblyName) != 'SquareLib' and $(GameContentType) == 'Mergedown'">
+	<ItemGroup Condition="$(AssemblyName) != 'SquareLib'">
 		<Content Include="mod.yaml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
