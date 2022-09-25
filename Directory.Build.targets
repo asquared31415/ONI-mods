@@ -32,7 +32,7 @@
 		<Copy SourceFiles="@(_Archived)" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)/archived_versions/%(RecursiveDir)"/>
 		<Copy SourceFiles="@(CopyFolder)" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)/%(CopyFolder.DestName)/%(RecursiveDir)"/>
 	</Target>
-	<Target Name="CopyNew" AfterTargets="CopyOutput" Condition="$(AssemblyName) != 'SquareLib' and $(GameContentType) == 'Mergedown'">
+	<Target Name="CopyNew" AfterTargets="CopyOutput" Condition="$(AssemblyName) != 'SquareLib'">
 		<Copy SourceFiles="$(ProjectDir)mod.yaml" DestinationFolder="$(SolutionDir)/Mods/$(ProjectName)"/>
 	</Target>
 
