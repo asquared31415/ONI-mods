@@ -72,7 +72,8 @@ namespace SquareLib
 
 		public static Sprite AddSpriteFromManifest(string manifest)
 		{
-			var texture = LoadTextureFromManifest(manifest);
+			var assembly = Assembly.GetCallingAssembly();
+			var texture = LoadTextureInternal(assembly, manifest);
 			if (texture != null)
 			{
 				var sprite = Sprite.Create(
@@ -91,18 +92,24 @@ namespace SquareLib
 		public static Texture2D LoadTextureFromManifest(string manifest)
 		{
 			var assembly = Assembly.GetCallingAssembly();
+			return LoadTextureInternal(assembly, manifest);
+		}
+
+		// the calling assembly should be determined at all the entry points and passed down
+		private static Texture2D LoadTextureInternal(Assembly assembly, string manifest)
+		{
 			using var zeroStream = assembly.GetManifestResourceStream(manifest);
 			using var memStream = new MemoryStream();
-			if (zeroStream != null)
+			if (zeroStream == null)
 			{
-				var texture = new Texture2D(1, 1);
-				zeroStream.CopyTo(memStream);
-				texture.LoadImage(memStream.ToArray());
-				return texture;
+				Debug.LogError($"Unable to load texture from assembly {assembly.FullName}, manifest {manifest}");
+				return null;
 			}
 
-			Debug.LogError($"Unable to load texture from assembly {assembly.FullName}, manifest {manifest}");
-			return null;
+			var texture = new Texture2D(1, 1);
+			zeroStream.CopyTo(memStream);
+			texture.LoadImage(memStream.ToArray());
+			return texture;
 		}
 	}
 }
