@@ -1,0 +1,43 @@
+<spriter_data scml_version="1.0" generator="kanimAL" generator_version="v1">
+  <folder id="0">>
+    <file id="0" name="sculpt_temp_4.png" width="122" height="324" pivot_x="0.4965164" pivot_y="0.022067904" />
+  </folder>
+  <entity id="0" name="sculpture_amazing_3">
+    <animation id="3" name="amazing_3" length="165" interval="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="1" />
+        </key>
+        <key id="1" time="33">
+          <object_ref id="0" timeline="0" key="1" z_index="1" />
+        </key>
+        <key id="2" time="66">
+          <object_ref id="0" timeline="0" key="2" z_index="1" />
+        </key>
+        <key id="3" time="99">
+          <object_ref id="0" timeline="0" key="3" z_index="1" />
+        </key>
+        <key id="4" time="132">
+          <object_ref id="0" timeline="0" key="4" z_index="1" />
+        </key>
+      </mainline>
+      <timeline id="0" name="sculpt_temp_0">
+        <key id="0" time="0">
+          <object folder="0" file="0" x="0" y="-12" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="1" time="33">
+          <object folder="0" file="0" x="0" y="-12" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="2" time="66">
+          <object folder="0" file="0" x="0" y="-12" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="3" time="99">
+          <object folder="0" file="0" x="0" y="-12" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="4" time="132">
+          <object folder="0" file="0" x="0" y="-12" angle="0" scale_x="1" scale_y="1" />
+        </key>
+      </timeline>
+    </animation>
+  </entity>
+</spriter_data>

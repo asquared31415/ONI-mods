@@ -1,0 +1,94 @@
+<spriter_data scml_version="1.0" generator="kanimAL" generator_version="v1">
+  <folder id="0">
+    <file id="0" name="art_2x3_f_0.png" width="146" height="232" pivot_x="0.5529109" pivot_y="0.35247844" />
+    <file id="1" name="backing_2x3_0.png" width="180" height="284" pivot_x="0.5154167" pivot_y="0.33195418" />
+    <file id="2" name="frame_2x3_0.png" width="208" height="312" pivot_x="0.5036058" pivot_y="0.3390224" />
+    <file id="3" name="stretch_marks_2x3_0.png" width="150" height="248" pivot_x="0.51033336" pivot_y="0.30519152" />
+  </folder>
+  <entity id="0" name="painting_tall_art_f">
+    <animation id="0" name="art_f" length="132" interval="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="4" />
+          <object_ref id="1" timeline="1" key="0" z_index="3" />
+          <object_ref id="2" timeline="2" key="0" z_index="2" />
+          <object_ref id="3" timeline="3" key="0" z_index="1" />
+        </key>
+        <key id="1" time="33">
+          <object_ref id="0" timeline="0" key="1" z_index="4" />
+          <object_ref id="1" timeline="1" key="1" z_index="3" />
+          <object_ref id="2" timeline="2" key="1" z_index="2" />
+          <object_ref id="3" timeline="3" key="1" z_index="1" />
+        </key>
+        <key id="2" time="66">
+          <object_ref id="0" timeline="0" key="2" z_index="4" />
+          <object_ref id="1" timeline="1" key="2" z_index="3" />
+          <object_ref id="2" timeline="2" key="2" z_index="2" />
+          <object_ref id="3" timeline="3" key="2" z_index="1" />
+        </key>
+        <key id="3" time="99">
+          <object_ref id="0" timeline="0" key="3" z_index="4" />
+          <object_ref id="1" timeline="1" key="3" z_index="3" />
+          <object_ref id="2" timeline="2" key="3" z_index="2" />
+          <object_ref id="3" timeline="3" key="3" z_index="1" />
+        </key>
+      </mainline>
+      <timeline id="0" name="frame_2x3_0">
+        <key id="0" time="0">
+          <object folder="0" file="2" x="0.05000000074505806" y="99.6500015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="1" time="33">
+          <object folder="0" file="2" x="0.05000000074505806" y="99.6500015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="2" time="66">
+          <object folder="0" file="2" x="0.05000000074505806" y="99.6500015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="3" time="99">
+          <object folder="0" file="2" x="0.05000000074505806" y="99.6500015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+      </timeline>
+      <timeline id="1" name="stretch_marks_2x3_0">
+        <key id="0" time="0">
+          <object folder="0" file="3" x="1.024999976158142" y="101.55000305175781" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="1" time="33">
+          <object folder="0" file="3" x="1.024999976158142" y="101.55000305175781" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="2" time="66">
+          <object folder="0" file="3" x="1.024999976158142" y="101.55000305175781" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="3" time="99">
+          <object folder="0" file="3" x="1.024999976158142" y="101.55000305175781" angle="0" scale_x="1" scale_y="1" />
+        </key>
+      </timeline>
+      <timeline id="2" name="art_2x3_f_0">
+        <key id="0" time="0">
+          <object folder="0" file="0" x="8.25" y="106.55000305175781" angle="0" scale_x="1.248290991750501" scale_y="1.248290991750501" />
+        </key>
+        <key id="1" time="33">
+          <object folder="0" file="0" x="8.25" y="106.55000305175781" angle="0" scale_x="1.248290991750501" scale_y="1.248290991750501" />
+        </key>
+        <key id="2" time="66">
+          <object folder="0" file="0" x="8.25" y="106.55000305175781" angle="0" scale_x="1.248290991750501" scale_y="1.248290991750501" />
+        </key>
+        <key id="3" time="99">
+          <object folder="0" file="0" x="8.25" y="106.55000305175781" angle="0" scale_x="1.248290991750501" scale_y="1.248290991750501" />
+        </key>
+      </timeline>
+      <timeline id="3" name="backing_2x3_0">
+        <key id="0" time="0">
+          <object folder="0" file="1" x="4.5" y="100.9000015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="1" time="33">
+          <object folder="0" file="1" x="4.5" y="100.9000015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="2" time="66">
+          <object folder="0" file="1" x="4.5" y="100.9000015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+        <key id="3" time="99">
+          <object folder="0" file="1" x="4.5" y="100.9000015258789" angle="0" scale_x="1" scale_y="1" />
+        </key>
+      </timeline>
+    </animation>
+  </entity>
+</spriter_data>
