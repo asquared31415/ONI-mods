@@ -54,22 +54,22 @@
       </mainline>
       <timeline id="0" name="frame_upper_0">
         <key id="0" time="0">
-          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="10" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -96,22 +96,22 @@
       </mainline>
       <timeline id="0" name="leira_0">
         <key id="0" time="0">
-          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="15" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -138,22 +138,22 @@
       </mainline>
       <timeline id="0" name="mae_0">
         <key id="0" time="0">
-          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="17" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -180,22 +180,22 @@
       </mainline>
       <timeline id="0" name="puft_0">
         <key id="0" time="0">
-          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="22" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -222,22 +222,22 @@
       </mainline>
       <timeline id="0" name="nikola_0">
         <key id="0" time="0">
-          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="18" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -264,22 +264,22 @@
       </mainline>
       <timeline id="0" name="burt_0">
         <key id="0" time="0">
-          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="5" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -306,22 +306,22 @@
       </mainline>
       <timeline id="0" name="rowan_0">
         <key id="0" time="0">
-          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="24" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -348,22 +348,22 @@
       </mainline>
       <timeline id="0" name="nisbet_0">
         <key id="0" time="0">
-          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="19" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -390,22 +390,22 @@
       </mainline>
       <timeline id="0" name="joshua_0">
         <key id="0" time="0">
-          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="14" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -432,22 +432,22 @@
       </mainline>
       <timeline id="0" name="ren_0">
         <key id="0" time="0">
-          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="23" x="-0.07500000298023224" y="-7.675000190734863" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -474,22 +474,22 @@
       </mainline>
       <timeline id="0" name="hatch_0">
         <key id="0" time="0">
-          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="13" x="17.924999237060547" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -516,22 +516,22 @@
       </mainline>
       <timeline id="0" name="drecko_0">
         <key id="0" time="0">
-          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="8" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -555,19 +555,19 @@
       </mainline>
       <timeline id="0" name="driller_0">
         <key id="0" time="0">
-          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="9" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -591,19 +591,19 @@
       </mainline>
       <timeline id="0" name="gassymoo_0">
         <key id="0" time="0">
-          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="11" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -627,19 +627,19 @@
       </mainline>
       <timeline id="0" name="glom_0">
         <key id="0" time="0">
-          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="12" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -663,19 +663,19 @@
       </mainline>
       <timeline id="0" name="lightbug_0">
         <key id="0" time="0">
-          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="16" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -699,19 +699,19 @@
       </mainline>
       <timeline id="0" name="slickster_0">
         <key id="0" time="0">
-          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="26" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -735,19 +735,19 @@
       </mainline>
       <timeline id="0" name="pacu_0">
         <key id="0" time="0">
-          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="20" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -771,19 +771,19 @@
       </mainline>
       <timeline id="0" name="bee_0">
         <key id="0" time="0">
-          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="4" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -807,19 +807,19 @@
       </mainline>
       <timeline id="0" name="critter_0">
         <key id="0" time="0">
-          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="7" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -843,19 +843,19 @@
       </mainline>
       <timeline id="0" name="caterpillar_0">
         <key id="0" time="0">
-          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="6" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -879,19 +879,19 @@
       </mainline>
       <timeline id="0" name="worm_0">
         <key id="0" time="0">
-          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="28" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -915,19 +915,19 @@
       </mainline>
       <timeline id="0" name="scout_bot_0">
         <key id="0" time="0">
-          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="25" x="0" y="0.02500000037252903" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -951,19 +951,19 @@
       </mainline>
       <timeline id="0" name="mima_0">
         <key id="0" time="0">
-          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="1" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -987,19 +987,19 @@
       </mainline>
       <timeline id="0" name="stinky_0">
         <key id="0" time="0">
-          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="3" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -1023,19 +1023,19 @@
       </mainline>
       <timeline id="0" name="harold_0">
         <key id="0" time="0">
-          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="0" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -1059,19 +1059,19 @@
       </mainline>
       <timeline id="0" name="nails_0">
         <key id="0" time="0">
-          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="2" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -1095,19 +1095,19 @@
       </mainline>
       <timeline id="0" name="place_0">
         <key id="0" time="0">
-          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="21" x="-0.07500000298023224" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
@@ -1152,40 +1152,40 @@
       </mainline>
       <timeline id="0" name="ui_0">
         <key id="0" time="0">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="1" time="33">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="2" time="66">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="3" time="99">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="4" time="132">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="5" time="165">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="6" time="198">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="7" time="231">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="8" time="264">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="9" time="297">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="10" time="330">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
         <key id="11" time="363">
-          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="1" scale_y="1" />
+          <object folder="0" file="27" x="-0.44999998807907104" y="0.15000000596046448" angle="0" scale_x="2" scale_y="2" a="1" />
         </key>
       </timeline>
     </animation>
