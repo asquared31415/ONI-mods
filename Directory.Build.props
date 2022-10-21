@@ -86,7 +86,10 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(UseSquareLib) == 'true'">
-		<ProjectReference Include="..\SquareLib\SquareLib.csproj" />
+		<ProjectReference Include="..\SquareLib\SquareLib.csproj">
+			<OutputItemType>Content</OutputItemType>
+			<Private>true</Private>
+		</ProjectReference>
 	</ItemGroup>
 
 	<ItemGroup Condition="$(UseSquareLib) == 'true'">

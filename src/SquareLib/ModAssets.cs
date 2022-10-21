@@ -9,9 +9,10 @@ namespace SquareLib
 	{
 		private static readonly TextureAtlas TileAtlas = Assets.GetTextureAtlas("tiles_solid");
 
-		public static TextureAtlas GetCustomTileAtlas(string name)
+		public static TextureAtlas GetCustomTileAtlas(string name, Assembly rootAssembly = null)
 		{
-			var path = Path.Combine(Path.GetDirectoryName(Assembly.GetCallingAssembly().Location), name + ".png");
+			rootAssembly ??= Assembly.GetCallingAssembly();
+			var path = Path.Combine(Path.GetDirectoryName(rootAssembly.Location)!, name + ".png");
 			TextureAtlas textureAtlas = null;
 			try
 			{
@@ -31,9 +32,10 @@ namespace SquareLib
 			return textureAtlas;
 		}
 
-		public static Sprite AddSpriteFromFile(string name)
+		public static Sprite AddSpriteFromFile(string name, Assembly rootAssembly = null)
 		{
-			var texture = LoadTexture(name);
+			rootAssembly ??= Assembly.GetCallingAssembly();
+			var texture = LoadTexture(name, null, rootAssembly);
 
 			var sprite = Sprite.Create(
 				texture,
@@ -45,11 +47,11 @@ namespace SquareLib
 			return sprite;
 		}
 
-		public static Texture2D LoadTexture(string name, string folder = null)
+		public static Texture2D LoadTexture(string name, string folder = null, Assembly rootAssembly = null)
 		{
 			Texture2D texture = null;
 			var directory = Path.Combine(
-				Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+				Path.GetDirectoryName((rootAssembly ?? Assembly.GetExecutingAssembly()).Location)!,
 				folder ?? "assets"
 			);
 
@@ -70,10 +72,10 @@ namespace SquareLib
 			return texture;
 		}
 
-		public static Sprite AddSpriteFromManifest(string manifest)
+		public static Sprite AddSpriteFromManifest(string manifest, Assembly rootAssembly = null)
 		{
-			var assembly = Assembly.GetCallingAssembly();
-			var texture = LoadTextureInternal(assembly, manifest);
+			rootAssembly ??= Assembly.GetCallingAssembly();
+			var texture = LoadTextureInternal(rootAssembly, manifest);
 			if (texture != null)
 			{
 				var sprite = Sprite.Create(
@@ -89,10 +91,10 @@ namespace SquareLib
 			return null;
 		}
 
-		public static Texture2D LoadTextureFromManifest(string manifest)
+		public static Texture2D LoadTextureFromManifest(string manifest, Assembly rootAssembly = null)
 		{
-			var assembly = Assembly.GetCallingAssembly();
-			return LoadTextureInternal(assembly, manifest);
+			rootAssembly ??= Assembly.GetCallingAssembly();
+			return LoadTextureInternal(rootAssembly, manifest);
 		}
 
 		// the calling assembly should be determined at all the entry points and passed down
