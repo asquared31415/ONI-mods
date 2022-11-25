@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovableGraves", "src\Movabl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableChefHat", "src\EnableChefHat\EnableChefHat.csproj", "{22B1CED8-A449-45E0-8CBB-965057669019}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartWithResearch", "src\StartWithResearch\StartWithResearch.csproj", "{FC2F1647-8BCF-4705-B011-61D2175C8A2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Mergedown|Any CPU = Mergedown|Any CPU
@@ -107,5 +109,7 @@ Global
 		{6EFF2821-7067-4D4F-930B-DB9002CDE834}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
 		{22B1CED8-A449-45E0-8CBB-965057669019}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU
 		{22B1CED8-A449-45E0-8CBB-965057669019}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
+		{FC2F1647-8BCF-4705-B011-61D2175C8A2B}.Mergedown|Any CPU.ActiveCfg = Mergedown|Any CPU
+		{FC2F1647-8BCF-4705-B011-61D2175C8A2B}.Mergedown|Any CPU.Build.0 = Mergedown|Any CPU
 	EndGlobalSection
 EndGlobal
