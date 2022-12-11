@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using HarmonyLib;
-using SquareLib;
 using STRINGS;
 using UnityEngine;
 
@@ -13,15 +13,6 @@ namespace InfoOverlay
 {
 	public static class InfoOverlayPatches
 	{
-		[HarmonyPatch(typeof(Db), "Initialize")]
-		public static class Db_Initialize_Patch
-		{
-			public static void Postfix()
-			{
-				ModAssets.AddSpriteFromFile("overlay_info");
-			}
-		}
-
 		// Register in the overlay
 		[HarmonyPatch(typeof(OverlayMenu), "InitializeToggles")]
 		public static class OverlayMenu_InitializeToggles_Patch
@@ -46,7 +37,7 @@ namespace InfoOverlay
 					new object[]
 					{
 						"Info Overlay",
-						"overlay_info",
+						"overlay_oxygen",
 						InfoOverlay.ID,
 						"",
 						Action.NumActions,
@@ -107,9 +98,19 @@ namespace InfoOverlay
 				}
 			}
 
-			private static Color GetCellColor(SimDebugView instance, int cell)
+			private static unsafe Color GetCellColor(SimDebugView instance, int cell)
 			{
-				return cell == selectedCell ? new Color(0f, 1f, 0.3f, 0.3f) : Color.clear;
+				var vecPtr = (FlowTexVec2*) PropertyTextures.externalFlowTex;
+				var flowTexVec = vecPtr[cell];
+				var flowVec = new Vector2f(flowTexVec.X, flowTexVec.Y);
+				return Color.Lerp(Color.red, Color.green, flowVec.magnitude);
+			}
+			
+			[StructLayout(LayoutKind.Sequential)]
+			public struct FlowTexVec2
+			{
+				public float X;
+				public float Y;
 			}
 		}
 
