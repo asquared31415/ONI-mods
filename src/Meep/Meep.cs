@@ -1,8 +1,10 @@
 using System;
+using System.Linq;
 using Database;
 using HarmonyLib;
 using JetBrains.Annotations;
 using KMod;
+using STRINGS;
 
 namespace Meep;
 
@@ -14,7 +16,7 @@ public class MeepInfo : UserMod2
 [HarmonyPatch(typeof(Personalities), MethodType.Constructor, new Type[0])]
 public static class Meep
 {
-	private const string MeepId = "Meep";
+	private static readonly string MeepId = DUPLICANTS.PERSONALITIES.MEEP.NAME.ToString().ToUpperInvariant();
 
 	[UsedImplicitly]
 	public static void Postfix(Personalities __instance)
@@ -29,8 +31,12 @@ public static class Meep
 		// make Meep a starting minion to make sure that a valid starting minion exists
 		meep.startingMinion = true;
 
-		// remove all other dupes
 		// as of recent updates, the game does not hard code expected lengths, which makes this much simpler
-		__instance.resources.RemoveAll(p => p.Id != MeepId);
+		// as of more recent updates (hot shots), personalities are no longer saved with the dupe, so we can't just remove them
+		// instead, they need to be disabled so that they can't be chosen by anything
+		foreach (var personality in __instance.resources.Where(personality => personality.Id != MeepId))
+		{
+			personality.Disabled = true;
+		}
 	}
 }
