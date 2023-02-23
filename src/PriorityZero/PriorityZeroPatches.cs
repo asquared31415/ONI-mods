@@ -85,7 +85,7 @@ public static class Chore_Ctor_Patch
 
 		if (foundIdx == -1)
 		{
-			Debug.LogError("[Priority Zero] unable to patch Chore ctor");
+			Debug.LogError("[Priority Zero] unable to patch Chore ctor, no comparison");
 			return codes;
 		}
 
@@ -103,15 +103,22 @@ public static class Chore_Ctor_Patch
 			return codes;
 		}
 
-		// the label will be on the start of the block which loads the format string
-		var labelIdx = codes.FindLastIndex(errIdx, ci => (ci.opcode == OpCodes.Ldstr) && (ci.labels.Count > 0));
-		if (labelIdx == -1)
+		// the label will be before the start of the block which loads the format string
+		var formatIdx = codes.FindLastIndex(errIdx, ci => ci.opcode == OpCodes.Ldstr);
+		if (formatIdx == -1)
 		{
-			Debug.LogError("[Priority Zero] unable to patch Chore ctor: no format string with labels");
+			Debug.LogError("[Priority Zero] unable to patch Chore ctor: no format string found");
 			return codes;
 		}
 
-		var _ = codes[labelIdx].ExtractLabels();
+		var labelIdx = codes.FindLastIndex(formatIdx, ci => ci.labels.Count > 0);
+		if (labelIdx == -1)
+		{
+			Debug.LogError("[Priority Zero] unable to find a label before format string");
+			return codes;
+		}
+
+		var _ = codes[formatIdx].ExtractLabels();
 
 		return codes;
 	}
