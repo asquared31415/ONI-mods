@@ -4,7 +4,6 @@ using Database;
 using HarmonyLib;
 using JetBrains.Annotations;
 using KMod;
-using STRINGS;
 
 namespace Meep;
 
@@ -16,7 +15,7 @@ public class MeepInfo : UserMod2
 [HarmonyPatch(typeof(Personalities), MethodType.Constructor, new Type[0])]
 public static class Meep
 {
-	private static readonly string MeepId = DUPLICANTS.PERSONALITIES.MEEP.NAME.ToString().ToUpperInvariant();
+	private const string MeepId = "MEEP";
 
 	[UsedImplicitly]
 	public static void Postfix(Personalities __instance)
