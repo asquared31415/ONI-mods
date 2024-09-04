@@ -8,4 +8,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Vanilla'" />
     <PropertyGroup Condition="'$(Configuration)' == 'Mergedown'" />
+    <ItemGroup>
+      <Folder Include="archived_versions\" />
+    </ItemGroup>
 </Project>

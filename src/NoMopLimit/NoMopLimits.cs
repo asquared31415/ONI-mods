@@ -21,21 +21,32 @@ public class NoMopLimitInfo : UserMod2
 [HarmonyPatch(typeof(MopTool), "OnDragTool")]
 public static class MopTool_OnDragTool_Patch
 {
-	public static readonly MethodInfo CellBelowInfo = AccessTools.Method(typeof(Grid), "CellBelow");
+	private static readonly MethodInfo CellBelowInfo = AccessTools.Method(typeof(Grid), "CellBelow");
+
+	private static readonly MethodInfo SolidIndexer =
+		AccessTools.DeclaredMethod(typeof(Grid.BuildFlagsSolidIndexer), "get_Item");
 
 	[UsedImplicitly]
 	public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> orig)
 	{
 		var codes = orig.ToList();
-		var idx = codes.FindIndex(ci => ci.operand is MethodInfo i && (i == CellBelowInfo));
-		if (idx != -1)
+		var belowIdx = codes.FindIndex(ci => ci.operand is MethodInfo i && (i == CellBelowInfo));
+		if (belowIdx == -1)
 		{
-			var i = idx - 2;
-			// Remove all before store to flag
-			codes.RemoveRange(i, 4);
-			codes.Insert(i, new CodeInstruction(OpCodes.Ldc_I4_1));
+			Debug.LogWarning("[NoMopLimits] Unable to find Grid.CellBelow");
+			return codes;
 		}
 
+		var idx = codes.FindIndex(belowIdx, ci => ci.operand is MethodInfo i && i == SolidIndexer);
+		if (idx == -1)
+		{
+			Debug.LogWarning("[NoMopLimits] Unable to find Grid.Solid[]");
+			return codes;
+		}
+
+		// replace the bool with a false
+		codes.Insert(idx + 1, new CodeInstruction(OpCodes.Pop));
+		codes.Insert(idx + 2, new CodeInstruction(OpCodes.Ldc_I4_1));
 		return codes;
 	}
 }
