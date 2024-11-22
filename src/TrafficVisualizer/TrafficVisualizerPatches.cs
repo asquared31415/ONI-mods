@@ -25,7 +25,7 @@ namespace TrafficVisualizer
 	{
 		public static void Prefix(Navigator ___navigator, Vector3 ___targetPos, Navigator.ActiveTransition ___transition)
 		{
-			if ((___navigator != null) && ___navigator.gameObject.HasTag(GameTags.Minion))
+			if ((___navigator != null) && ___navigator.gameObject.HasTag(GameTags.BaseMinion))
 			{
 				Debug.Log(___transition);
 				NavigatorRecordManager.Add(Grid.PosToCell(___targetPos));
