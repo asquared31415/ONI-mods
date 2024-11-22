@@ -10,6 +10,7 @@ public class GraveInfoItem : KMonoBehaviour
 	[Serialize] public string graveName;
 	[Serialize] public int epitaphIdx = -1;
 	[Serialize] public float burialTime = -1f;
+	[Serialize] public string graveAnim = "";
 
 #pragma warning disable CS0649
 	[MyCmpReq] private KSelectable selectable;
@@ -39,12 +40,13 @@ public class GraveInfoItem : KMonoBehaviour
 		selectable.AddStatusItem(infoStatus, this);
 	}
 
-	public void SetInfo(string dupeName, int idx, float time)
+	public void SetInfo(string dupeName, int idx, float time, string anim)
 	{
 		graveName = dupeName;
 		gameObject.name = dupeName;
 		epitaphIdx = idx;
 		burialTime = time;
+		graveAnim = anim;
 	}
 
 	private static string ResolveString(string format, object data)

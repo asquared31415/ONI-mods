@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
 using HarmonyLib;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -37,6 +33,7 @@ public static class GravePatches
 				var graveName = infoItem.graveName;
 				var epitaphIdx = infoItem.epitaphIdx;
 				var burialTime = infoItem.burialTime;
+				var graveAnim = infoItem.graveAnim;
 				GameScheduler.Instance.ScheduleNextFrame(
 					"MovableGraves.FixGraveInfo",
 					_ =>
@@ -44,64 +41,16 @@ public static class GravePatches
 						__instance.graveName = graveName;
 						__instance.epitaphIdx = epitaphIdx;
 						__instance.burialTime = burialTime;
+						__instance.graveAnim = graveAnim;
+
+						// play the new grave anim
+						if (__instance.TryGetComponent<KAnimControllerBase>(out var kacb))
+						{
+							kacb.Play(__instance.graveAnim);
+						}
 					}
 				);
 			}
-		}
-	}
-
-	[HarmonyPatch(typeof(Grave.StatesInstance), nameof(Grave.StatesInstance.CreateFetchTask))]
-	public static class Grave_CreateChore_Patch
-	{
-		private static readonly ConstructorInfo FetchChoreCtor = AccessTools.Constructor(
-			typeof(FetchChore),
-			new[]
-			{
-				typeof(ChoreType), typeof(Storage), typeof(float), typeof(HashSet<Tag>),
-				typeof(FetchChore.MatchCriteria), typeof(Tag), typeof(Tag[]), typeof(ChoreProvider), typeof(bool),
-				typeof(System.Action<Chore>), typeof(System.Action<Chore>), typeof(System.Action<Chore>),
-				typeof(Operational.State), typeof(int),
-			}
-		);
-
-		private static readonly FieldInfo MinionTag = AccessTools.Field(typeof(GameTags), nameof(GameTags.Minion));
-
-		[UsedImplicitly]
-		public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> orig)
-		{
-			var codes = orig.ToList();
-
-			var ctorIdx = codes.FindIndex(
-				ci => (ci.opcode == OpCodes.Newobj) && ci.operand is ConstructorInfo ctor && (ctor == FetchChoreCtor)
-			);
-			if (ctorIdx == -1)
-			{
-				Debug.LogWarning("[Movable Graves] Unable to find Grave fetch chore ctor");
-				return codes;
-			}
-
-			var minionIdx = codes.FindLastIndex(ctorIdx, ci => ci.LoadsField(MinionTag));
-			if (minionIdx == -1)
-			{
-				Debug.LogWarning("[Movable Graves] Unable to find Minion tag");
-				return codes;
-			}
-
-			// +1 for HashSet::add, +1 for popping the ret bool, +1 to insert after
-			var insertIdx = minionIdx + 3;
-
-			codes.InsertRange(
-				insertIdx,
-				new[]
-				{
-					new CodeInstruction(OpCodes.Dup),
-					CodeInstruction.LoadField(typeof(GraveInfoItemConfig), nameof(GraveInfoItemConfig.Tag)),
-					CodeInstruction.Call(typeof(HashSet<Tag>), nameof(HashSet<Tag>.Add), new[] { typeof(Tag) }),
-					new CodeInstruction(OpCodes.Pop),
-				}
-			);
-
-			return codes;
 		}
 	}
 }

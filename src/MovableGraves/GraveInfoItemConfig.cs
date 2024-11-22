@@ -27,7 +27,15 @@ public class GraveInfoItemConfig : IEntityConfig
 			0.5f,
 			true,
 			element: SimHashes.Granite,
-			additionalTags: new List<Tag> { GameTags.Corpse, GameTags.MedicalSupplies }
+			additionalTags: new List<Tag>
+			{
+				// requiredTag on graves
+				GameTags.Corpse, 
+				// hacky workaround to get the grave chore to see this now that multiple tags are not allowed
+				GameTags.BaseMinion,
+				// it should be a medical supplies category
+				GameTags.MedicalSupplies, 
+			}
 		);
 		go.AddOrGet<GraveInfoItem>();
 		return go;

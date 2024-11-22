@@ -81,7 +81,7 @@ public class GraveDeconstructDropper : KMonoBehaviour
 			transform.position + new Vector3(0, 0.75f, 0)
 		);
 		var info = infoGo.GetComponent<GraveInfoItem>();
-		info.SetInfo(grave.graveName, grave.epitaphIdx, grave.burialTime);
+		info.SetInfo(grave.graveName, grave.epitaphIdx, grave.burialTime, grave.graveAnim);
 		infoGo.SetActive(true);
 	}
 }
