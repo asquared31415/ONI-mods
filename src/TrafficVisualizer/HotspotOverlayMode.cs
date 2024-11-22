@@ -1,17 +1,13 @@
-namespace TrafficVisualizer
-{
-	public class HotspotOverlayMode : OverlayModes.Mode
-	{
-		public static HashedString Id = "asquared31415_" + nameof(HotspotOverlayMode);
+namespace TrafficVisualizer;
 
-		public override HashedString ViewMode()
-		{
-			return Id;
-		}
+public class HotspotOverlayMode : OverlayModes.Mode {
+    public static HashedString Id = "asquared31415_" + nameof(HotspotOverlayMode);
 
-		public override string GetSoundName()
-		{
-			return "Decor";
-		}
-	}
+    public override HashedString ViewMode() {
+        return Id;
+    }
+
+    public override string GetSoundName() {
+        return "Decor";
+    }
 }

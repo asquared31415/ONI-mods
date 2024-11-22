@@ -16,4 +16,7 @@
             <DestName>assets</DestName>
         </CopyFolder>
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="archived_versions\" />
+    </ItemGroup>
 </Project>

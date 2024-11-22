@@ -1,123 +1,109 @@
 using System;
 using System.Collections.Generic;
 using HarmonyLib;
+using JetBrains.Annotations;
 using KMod;
 using SquareLib;
 using UnityEngine;
 
-namespace TrafficVisualizer
-{
-	public class TrafficVisualizerInfo : UserMod2
-	{
-	}
+namespace TrafficVisualizer;
 
-	[HarmonyPatch(typeof(Db), "Initialize")]
-	public static class Db_Initialize_Patch
-	{
-		public static void Postfix()
-		{
-			ModAssets.AddSpriteFromFile("traffic_overlay_icon");
-		}
-	}
+[UsedImplicitly]
+public class TrafficVisualizerInfo : UserMod2;
 
-	[HarmonyPatch(typeof(TransitionDriver), "EndTransition")]
-	public static class TransitionDriver_EndTransition_Patch
-	{
-		public static void Prefix(Navigator ___navigator, Vector3 ___targetPos, Navigator.ActiveTransition ___transition)
-		{
-			if ((___navigator != null) && ___navigator.gameObject.HasTag(GameTags.BaseMinion))
-			{
-				Debug.Log(___transition);
-				NavigatorRecordManager.Add(Grid.PosToCell(___targetPos));
-			}
-		}
-	}
+[HarmonyPatch(typeof(Db), "Initialize")]
+public static class Db_Initialize_Patch {
+    [UsedImplicitly]
+    public static void Postfix() {
+        ModAssets.AddSpriteFromFile("traffic_overlay_icon");
+    }
+}
 
-	[HarmonyPatch(typeof(Game), "OnDestroy")]
-	public static class Game_OnDestroy_Patch
-	{
-		public static void Prefix()
-		{
-			NavigatorRecordManager.Clear();
-		}
-	}
+[HarmonyPatch(typeof(TransitionDriver), "EndTransition")]
+public static class TransitionDriver_EndTransition_Patch {
+    [UsedImplicitly]
+    public static void Prefix(Navigator ___navigator, Vector3 ___targetPos, Navigator.ActiveTransition ___transition) {
+        if (___navigator != null && ___navigator.gameObject.HasTag(GameTags.BaseMinion)) {
+            Debug.Log(___transition);
+            NavigatorRecordManager.Add(Grid.PosToCell(___targetPos));
+        }
+    }
+}
 
-	// The overlay code
-	[HarmonyPatch(typeof(SimDebugView), "OnPrefabInit")]
-	public static class SimDebugView_OnPrefabInit_Patch
-	{
-		public static void Postfix(Dictionary<HashedString, Func<SimDebugView, int, Color>> ___getColourFuncs)
-		{
-			___getColourFuncs.Add(HotspotOverlayMode.Id, NavigatorColors.GetNavColor);
-		}
-	}
+[HarmonyPatch(typeof(Game), "OnDestroy")]
+public static class Game_OnDestroy_Patch {
+    [UsedImplicitly]
+    public static void Prefix() {
+        NavigatorRecordManager.Clear();
+    }
+}
 
-	// Register in the overlay
-	[HarmonyPatch(typeof(OverlayMenu), "InitializeToggles")]
-	public static class OverlayMenu_InitializeToggles_Patch
-	{
-		public static void Postfix(List<KIconToggleMenu.ToggleInfo> ___overlayToggleInfos)
-		{
-			var constructor = AccessTools.Constructor(
-				AccessTools.Inner(typeof(OverlayMenu), "OverlayToggleInfo"),
-				new[]
-				{
-					typeof(string),
-					typeof(string),
-					typeof(HashedString),
-					typeof(string),
-					typeof(Action),
-					typeof(string),
-					typeof(string),
-				}
-			);
-			var _ = Action.NumActions.ToString();
+// The overlay code
+[HarmonyPatch(typeof(SimDebugView), "OnPrefabInit")]
+public static class SimDebugView_OnPrefabInit_Patch {
+    [UsedImplicitly]
+    public static void Postfix(Dictionary<HashedString, Func<SimDebugView, int, Color>> ___getColourFuncs) {
+        ___getColourFuncs.Add(HotspotOverlayMode.Id, NavigatorColors.GetNavColor);
+    }
+}
 
-			var obj = constructor.Invoke(
-				new object[]
-				{
-					"Traffic Overlay",
-					"traffic_overlay_icon",
-					HotspotOverlayMode.Id,
-					"",
-					Action.NumActions,
-					"Displays areas where duplicants travel frequently {Hotkey}",
-					"Traffic Overlay",
-				}
-			);
+// Register in the overlay
+[HarmonyPatch(typeof(OverlayMenu), "InitializeToggles")]
+public static class OverlayMenu_InitializeToggles_Patch {
+    [UsedImplicitly]
+    public static void Postfix(List<KIconToggleMenu.ToggleInfo> ___overlayToggleInfos) {
+        var constructor = AccessTools.Constructor(
+            AccessTools.Inner(typeof(OverlayMenu), "OverlayToggleInfo"),
+            [
+                typeof(string),
+                typeof(string),
+                typeof(HashedString),
+                typeof(string),
+                typeof(Action),
+                typeof(string),
+                typeof(string),
+            ]
+        );
 
-			___overlayToggleInfos.Add((KIconToggleMenu.ToggleInfo) obj);
-		}
-	}
+        var obj = constructor.Invoke(
+            [
+                "Traffic Overlay",
+                "traffic_overlay_icon",
+                HotspotOverlayMode.Id,
+                "",
+                Action.NumActions,
+                "Displays areas where duplicants travel frequently {Hotkey}",
+                "Traffic Overlay",
+            ]
+        );
 
-	[HarmonyPatch(typeof(OverlayScreen), "RegisterModes")]
-	public static class OverlayScreen_RegisterModes_Patch
-	{
-		public static void Postfix()
-		{
-			var overlayScreen = Traverse.Create(OverlayScreen.Instance);
-			overlayScreen.Method("RegisterMode", new HotspotOverlayMode()).GetValue();
-		}
-	}
+        ___overlayToggleInfos.Add((KIconToggleMenu.ToggleInfo)obj);
+    }
+}
 
-	[HarmonyPatch(typeof(StatusItem), "GetStatusItemOverlayBySimViewMode")]
-	public static class StatusItem_GetStatusItemOverlayBySimViewMode_Patch
-	{
-		public static void Prefix(Dictionary<HashedString, StatusItem.StatusItemOverlays> ___overlayBitfieldMap)
-		{
-			if (!___overlayBitfieldMap.ContainsKey(HotspotOverlayMode.Id))
-			{
-				___overlayBitfieldMap.Add(HotspotOverlayMode.Id, StatusItem.StatusItemOverlays.None);
-			}
-		}
-	}
+[HarmonyPatch(typeof(OverlayScreen), "RegisterModes")]
+public static class OverlayScreen_RegisterModes_Patch {
+    [UsedImplicitly]
+    public static void Postfix() {
+        var overlayScreen = Traverse.Create(OverlayScreen.Instance);
+        overlayScreen.Method("RegisterMode", new HotspotOverlayMode()).GetValue();
+    }
+}
 
-	[HarmonyPatch(typeof(GameClock), "OnPrefabInit")]
-	public static class GameClock_OnPrefabInit_Patch
-	{
-		public static void Postfix(GameClock __instance)
-		{
-			__instance.Subscribe((int) GameHashes.NewDay, NavigatorRecordManager.UpdateCounts);
-		}
-	}
+[HarmonyPatch(typeof(StatusItem), "GetStatusItemOverlayBySimViewMode")]
+public static class StatusItem_GetStatusItemOverlayBySimViewMode_Patch {
+    [UsedImplicitly]
+    public static void Prefix(Dictionary<HashedString, StatusItem.StatusItemOverlays> ___overlayBitfieldMap) {
+        if (!___overlayBitfieldMap.ContainsKey(HotspotOverlayMode.Id)) {
+            ___overlayBitfieldMap.Add(HotspotOverlayMode.Id, StatusItem.StatusItemOverlays.None);
+        }
+    }
+}
+
+[HarmonyPatch(typeof(GameClock), "OnPrefabInit")]
+public static class GameClock_OnPrefabInit_Patch {
+    [UsedImplicitly]
+    public static void Postfix(GameClock __instance) {
+        __instance.Subscribe((int)GameHashes.NewDay, NavigatorRecordManager.UpdateCounts);
+    }
 }
