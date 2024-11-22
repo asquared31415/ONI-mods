@@ -5,12 +5,10 @@ using KMod;
 namespace MovableGraves;
 
 [UsedImplicitly]
-public class MovableGravesInfo : UserMod2
-{
-	public override void OnLoad(Harmony harmony)
-	{
-		base.OnLoad(harmony);
+public class MovableGravesInfo : UserMod2 {
+    public override void OnLoad(Harmony harmony) {
+        base.OnLoad(harmony);
 
-		LocString.CreateLocStringKeys(typeof(MovableGravesStrings.STRINGS), null);
-	}
+        LocString.CreateLocStringKeys(typeof(MovableGravesStrings.STRINGS), null);
+    }
 }
