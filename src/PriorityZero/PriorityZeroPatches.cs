@@ -39,7 +39,7 @@ public static class PriorityZero
 }
 
 [HarmonyPatch(
-	typeof(Chore),
+	typeof(StandardChoreBase),
 	MethodType.Constructor,
 	typeof(ChoreType),
 	typeof(IStateMachineTarget),
@@ -85,7 +85,7 @@ public static class Chore_Ctor_Patch
 
 		if (foundIdx == -1)
 		{
-			Debug.LogError("[Priority Zero] unable to patch Chore ctor, no comparison");
+			Debug.LogError("[Priority Zero] unable to patch StandardChoreBase ctor, no comparison");
 			return codes;
 		}
 
@@ -99,7 +99,7 @@ public static class Chore_Ctor_Patch
 		var errIdx = codes.FindIndex(ci => ci.Calls(DebugErrMethod));
 		if (errIdx == -1)
 		{
-			Debug.LogError($"[Priority Zero] unable to patch Chore ctor: no {DebugErrMethod.Name} call found");
+			Debug.LogError($"[Priority Zero] unable to patch StandardChoreBase ctor: no {DebugErrMethod.Name} call found");
 			return codes;
 		}
 
@@ -107,7 +107,7 @@ public static class Chore_Ctor_Patch
 		var formatIdx = codes.FindLastIndex(errIdx, ci => ci.opcode == OpCodes.Ldstr);
 		if (formatIdx == -1)
 		{
-			Debug.LogError("[Priority Zero] unable to patch Chore ctor: no format string found");
+			Debug.LogError("[Priority Zero] unable to patch StandardChoreBase ctor: no format string found");
 			return codes;
 		}
 
@@ -124,9 +124,9 @@ public static class Chore_Ctor_Patch
 	}
 
 	[UsedImplicitly]
-	public static void Postfix(Chore __instance)
+	public static void Postfix(StandardChoreBase __instance)
 	{
-		__instance.AddPrecondition(PriorityZero.ZeroPrecondition);
+		__instance.AddPrecondition(PriorityZero.ZeroPrecondition, (object) null);
 	}
 }
 
