@@ -58,19 +58,12 @@ public static class PriorityZero
 )]
 public static class Chore_Ctor_Patch
 {
-	private static readonly MethodInfo DebugErrMethod = AccessTools.Method(
-		typeof(Debug),
-		nameof(Debug.LogErrorFormat),
-		new[] { typeof(string), typeof(object[]) }
-	);
-
 	[UsedImplicitly]
 	public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> origCode)
 	{
 		var codes = origCode.ToList();
 
 		var foundIdx = -1;
-
 		// Remove the first < 1 branch that errors if a priority is less than 1
 		// loop up to the third to last index, since the last one can't be the start of a pair, and there needs
 		// to be a block to put the label on after
@@ -85,40 +78,15 @@ public static class Chore_Ctor_Patch
 
 		if (foundIdx == -1)
 		{
-			Debug.LogError("[Priority Zero] unable to patch Chore ctor, no comparison");
+			Debug.LogError("[Priority Zero] unable to patch StandardChoreBase ctor, no comparison");
 			return codes;
 		}
 
-		// Move the label to the block after
+		// move the labels from the start of the if < 1 condition to after it, in case anything jumps to it
 		codes[foundIdx + 2].MoveLabelsFrom(codes[foundIdx - 1]);
 
 		// remove the previous load of the priority, then the comparison load and branch
 		codes.RemoveRange(foundIdx - 1, 3);
-
-		// remove the label that was used for the <1 case for error reporting
-		var errIdx = codes.FindIndex(ci => ci.Calls(DebugErrMethod));
-		if (errIdx == -1)
-		{
-			Debug.LogError($"[Priority Zero] unable to patch StandardChoreBase ctor: no {DebugErrMethod.Name} call found");
-			return codes;
-		}
-
-		// the label will be before the start of the block which loads the format string
-		var formatIdx = codes.FindLastIndex(errIdx, ci => ci.opcode == OpCodes.Ldstr);
-		if (formatIdx == -1)
-		{
-			Debug.LogError("[Priority Zero] unable to patch StandardChoreBase ctor: no format string found");
-			return codes;
-		}
-
-		var labelIdx = codes.FindLastIndex(formatIdx, ci => ci.labels.Count > 0);
-		if (labelIdx == -1)
-		{
-			Debug.LogError("[Priority Zero] unable to find a label before format string");
-			return codes;
-		}
-
-		var _ = codes[formatIdx].ExtractLabels();
 
 		return codes;
 	}
